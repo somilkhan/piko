@@ -22,7 +22,7 @@ Starting with patches v3.0.0, Piko patches use [Morphe](https://morphe.software)
 
 Tap the link to add Piko as a patch source in Morphe Manager:
 
-[**➕ Add Piko to Morphe**](https://morphe.software/add-source?github=somilkhan/piko/tree/dev)
+[**➕ Add Piko to Morphe**](https://morphe.software/add-source?github=somilkhan/piko)
 
 Then patch Twitter/X or Instagram:
 1. Tap X or Instagram app icon in Morphe
@@ -69,7 +69,7 @@ To patch with Twitter/X version 11.88 to 12.4, you must include patches from ano
 ## ⚙️ Patch Details
 
 <!-- PATCHES_START -->
-> **[v3.10.0-dev.2](https://github.com/somilkhan/piko/releases/tag/v3.10.0-dev.2)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;132 patches total
+> **[v3.10.0](https://github.com/somilkhan/piko/releases/tag/v3.10.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;132 patches total
 <details>
 <summary>📦 Twitter&nbsp;&nbsp;•&nbsp;&nbsp;75 patches</summary>
 <br>
