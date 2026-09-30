@@ -46,6 +46,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if ! gh release view v3.10.0-dev.1 --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            git tag -d v3.10.0-dev.1 || true
             git push origin :refs/tags/v3.10.0-dev.1 || true
           fi
       - name: Release
