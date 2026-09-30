@@ -40,6 +40,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Remove stale orphan dev tag
+        if: github.ref == 'refs/heads/dev'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if ! gh release view v3.10.0-dev.1 --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            git push origin :refs/tags/v3.10.0-dev.1 || true
+          fi
       - name: Release
         uses: cycjimmy/semantic-release-action@v6
         id: release
