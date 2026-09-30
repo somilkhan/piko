@@ -1,3 +1,11 @@
+## [3.10.1-dev.2](https://github.com/somilkhan/piko/compare/v3.10.1-dev.1...v3.10.1-dev.2) (2026-09-30)
+
+### 🐛 Bug Fixes
+
+* import settings status startup patch ([0379935](https://github.com/somilkhan/piko/commit/0379935bbdb091b8b1fa6238e89a0a1998caf5b8))
+* isolate settings status initialization ([74207b3](https://github.com/somilkhan/piko/commit/74207b33a3ea05ef00dd759cdeb2caf967b45292))
+* restore settings startup hook import ([1bd4128](https://github.com/somilkhan/piko/commit/1bd4128a6c4932205e097ab75dbb44a0f461ce85))
+
 ## [3.10.1-dev.1](https://github.com/somilkhan/piko/compare/v3.10.0...v3.10.1-dev.1) (2026-09-30)
 
 ### 🐛 Bug Fixes
