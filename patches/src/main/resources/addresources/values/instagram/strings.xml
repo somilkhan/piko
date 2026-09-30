@@ -237,7 +237,11 @@
 
     <!-- Like Animation Section -->
     <string name="piko_change_like_animation">Change like animation</string>
-    <string name="piko_change_like_animation_desc">Change the animation to one from existing Rings like animations</string>
+    <string name="piko_change_like_animation_desc">Choose a built-in Rings animation or import your own animated GIF/WebP package</string>
+    <string name="piko_import_custom_like_animation">Import custom animation</string>
+    <string name="piko_custom_like_animation_invalid">Invalid custom like animation package</string>
+    <string name="piko_custom_like_animation_imported">Custom like animation imported</string>
+    <string name="piko_custom_like_animation_import_failed">Failed to import custom like animation</string>
     <string name="piko_available_like_animation">Available like animations</string>
 
     <!-- For arrays -->

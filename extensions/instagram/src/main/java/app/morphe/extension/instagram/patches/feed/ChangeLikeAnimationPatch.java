@@ -8,23 +8,32 @@
 package app.morphe.extension.instagram.patches.feed;
 
 import app.morphe.extension.instagram.entity.Entity;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+
 import app.morphe.extension.instagram.utils.Pref;
 import app.morphe.extension.shared.Logger;
 
 public class ChangeLikeAnimationPatch {
-    private static String CHANGE_LIKE_ANIMATION;
-    static{
-        CHANGE_LIKE_ANIMATION = Pref.changeLikeAnimation();
-    }
-
-    // This is required in order to change the like animation class enum type on runtime.
-    private static boolean checkPrefAnimation(){
-        return CHANGE_LIKE_ANIMATION == null || "ARES_LIKE_ACTIVATION".equals(CHANGE_LIKE_ANIMATION);
+    private static boolean checkPrefAnimation(String animation) {
+        return animation == null || "ARES_LIKE_ACTIVATION".equals(animation);
     }
 
     public static Object changeLikeAnimation(Object defaultAnimation){
         try {
-            if (ChangeLikeAnimationPatch.checkPrefAnimation()) {
+            String animation = Pref.changeLikeAnimation();
+
+            if (CustomLikeAnimationStore.isCustomSelection(animation)) {
+                Entity entity = new Entity();
+                Class<?> animationEnumClass = Class.forName("className");
+                return entity.getMethod(
+                        animationEnumClass,
+                        "valueOf",
+                        CustomLikeAnimationStore.CARRIER_ANIMATION
+                );
+            }
+
+            if (ChangeLikeAnimationPatch.checkPrefAnimation(animation)) {
                 return null;
             }
 
@@ -33,7 +42,7 @@ public class ChangeLikeAnimationPatch {
             Object likeAnimation = entity.getMethod(
                     animationEnumClass,
                     "valueOf",
-                    CHANGE_LIKE_ANIMATION
+                    animation
             );
             return likeAnimation;
 
@@ -41,6 +50,17 @@ public class ChangeLikeAnimationPatch {
             Logger.printException(() -> "changeLikeAnimation failure", e);
         }
         return defaultAnimation;
+    }
+
+    public static Drawable createCustomLikeAnimationDrawable(Object view) {
+        if (!(view instanceof View)) return null;
+        try {
+            return CustomLikeAnimationStore.createDrawableForCurrentSelection(
+                    ((View) view).getContext()
+            );
+        } catch (Exception ignored) {
+            return null;
+        }
     }
 
 }

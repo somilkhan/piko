@@ -11,6 +11,7 @@ import static app.morphe.extension.instagram.utils.IgStr.str;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -34,10 +35,14 @@ import app.morphe.extension.instagram.settings.preference.Helper;
 import app.morphe.extension.instagram.settings.preference.ScreenBuilder;
 import app.morphe.extension.instagram.settings.preference.widgets.InstagramPreferenceStyle;
 import app.morphe.extension.instagram.settings.preference.widgets.SwitchPref;
+import app.morphe.extension.instagram.settings.preference.widgets.ListPref;
+import app.morphe.extension.instagram.patches.feed.CustomLikeAnimationStore;
 import app.morphe.extension.instagram.settings.SettingsStatus;
 import app.morphe.extension.instagram.theme.MaterialYouTheme;
 
 public class SettingsActivity extends Activity {
+
+    public static final int REQUEST_IMPORT_CUSTOM_LIKE_ANIMATION = 4107;
 
     private LinearLayout root;
     private LinearLayout toolbar;
@@ -147,6 +152,47 @@ public class SettingsActivity extends Activity {
 
     public LinearLayout getCustomContainer() {
         return customContainer;
+    }
+
+    public void openCustomLikeAnimationPicker() {
+        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+        intent.addCategory(Intent.CATEGORY_OPENABLE);
+        intent.setType("*/*");
+        startActivityForResult(intent, REQUEST_IMPORT_CUSTOM_LIKE_ANIMATION);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode != REQUEST_IMPORT_CUSTOM_LIKE_ANIMATION
+                || resultCode != RESULT_OK
+                || data == null
+                || data.getData() == null) {
+            return;
+        }
+
+        CustomLikeAnimationStore.ImportResult result =
+                CustomLikeAnimationStore.importFromUri(this, data.getData());
+
+        if (!result.success) {
+            android.widget.Toast.makeText(
+                    this, result.message, android.widget.Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        android.app.Fragment fragment = getFragmentManager().findFragmentById(1001);
+        if (fragment instanceof SettingsFragment) {
+            Preference preference =
+                    ((SettingsFragment) fragment).findPreference(Settings.CHANGE_LIKE_ANIMATION.key);
+            if (preference instanceof ListPref) {
+                ListPref listPref = (ListPref) preference;
+                listPref.reloadEntries();
+                listPref.setValue(result.selection);
+            }
+        }
+
+        android.widget.Toast.makeText(
+                this, result.message, android.widget.Toast.LENGTH_SHORT).show();
     }
 
     // (Keep the nested static SettingsFragment class unchanged)
