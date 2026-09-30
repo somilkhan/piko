@@ -3,9 +3,6 @@ name: Release
 on:
   workflow_dispatch:
   push:
-    branches:
-      - main
-      - dev
 
 jobs:
   release:
@@ -26,7 +23,7 @@ jobs:
         uses: actions/setup-java@v6.0.0
         with:
           distribution: 'temurin'
-          java-version: '17'
+          java-version: '21'
 
       - name: Cache Gradle
         uses: burrunan/gradle-cache-action@v3
@@ -40,15 +37,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Remove stale orphan dev tag
-        if: github.ref == 'refs/heads/dev'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          if ! gh release view v3.10.0-dev.1 --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
-            git tag -d v3.10.0-dev.1 || true
-            git push origin :refs/tags/v3.10.0-dev.1 || true
-          fi
+      # Semantic release runs its own Gradle build command.
+      # Only dev and main branches generate releases as specified by .releaserc.
       - name: Release
         uses: cycjimmy/semantic-release-action@v6
         id: release
@@ -71,6 +61,8 @@ jobs:
           subject-name: 'Piko Patches ${{ steps.release.outputs.new_release_git_tag }}'
           subject-path: patches/build/libs/patches-*.mpp
 
+      # Always verify compilation when semantic-release did not publish a release.
+      # This covers non-main/dev branches, chore commits, docs commits, etc.
       - name: Verify project compiles
         if: steps.release.outputs.new_release_published != 'true'
         env:
