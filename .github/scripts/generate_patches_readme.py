@@ -218,5 +218,17 @@ new_readme = re.sub(
     readme,
     flags=re.DOTALL,
 )
+
+# Keep the Morphe Manager source link aligned with the release channel.
+# A /tree/dev endpoint is what Morphe Manager uses to identify and auto-enable
+# the prerelease channel; the stable README points at the repository root.
+source_repo = f"{owner}/{repo}"
+source_path = f"{source_repo}/tree/dev" if branch == "dev" else source_repo
+source_url = f"https://morphe.software/add-source?github={source_path}"
+new_readme = re.sub(
+    r"(\[\*\*➕ Add Piko to Morphe\*\*\]\()https://morphe\.software/add-source\?github=[^)]*(\))",
+    rf"\1{source_url}\2",
+    new_readme,
+)
 readme_path.write_text(new_readme, encoding="utf-8")
 print(f"✅ Injected patches section into {readme_path} (v{ver}, branch={branch}, {total} patches, expanded={expanded})")
