@@ -6,6 +6,7 @@
 
 package app.crimera.patches.instagram.misc.settings
 
+import app.crimera.patches.instagram.misc.extension.hooks.instagramInitHook
 import app.crimera.patches.instagram.entity.developerOptions.developerOptionsEntity
 import app.crimera.patches.instagram.entity.dialogbox.instagramDialogBoxEntity
 import app.crimera.patches.instagram.entity.instagramButton.instagramButtonEntity
