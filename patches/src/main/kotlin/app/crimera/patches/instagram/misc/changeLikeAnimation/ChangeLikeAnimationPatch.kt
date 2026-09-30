@@ -25,6 +25,11 @@ internal object ChangeLikeAnimationExtensionFingerprint : Fingerprint(
     definingClass = EXTENSION_CLASS_DESCRIPTOR,
 )
 
+internal object LikeActionViewSetUpCustomLikesAnimationFingerprint : Fingerprint(
+    name = "setUpCustomLikesAnimation",
+    definingClass = "Lcom/instagram/ui/mediaactions/LikeActionView;",
+)
+
 internal object XDTUserActivationMetadataImplInitFingerprint : Fingerprint(
     name = "<init>",
     definingClass = "Lcom/instagram/api/schemas/XDTUserActivationMetadataImpl;",
@@ -61,4 +66,22 @@ val changeLikeAnimationPatch =
                 enableSettings("changeLikeAnimation")
             }
         }
+
+    execute {
+        LikeActionViewSetUpCustomLikesAnimationFingerprint.method.apply {
+            addInstructionsWithLabels(
+                0,
+                """
+                invoke-static {p0}, $EXTENSION_CLASS_DESCRIPTOR->createCustomLikeAnimationDrawable(Ljava/lang/Object;)Landroid/graphics/drawable/Drawable;
+                move-result-object v0
+                if-eqz v0, :piko_original_like_animation
+                iget-object v1, p0, Lcom/instagram/ui/mediaactions/LikeActionView;->A00:LX/06GF;
+                invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+                goto :piko_continue_like_animation
+                """.trimIndent(),
+                ExternalLabel("piko_original_like_animation", getInstruction(0)),
+                ExternalLabel("piko_continue_like_animation", getInstruction(9)),
+            )
+        }
     }
+}
