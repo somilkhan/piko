@@ -1,3 +1,9 @@
+## [3.10.1-dev.1](https://github.com/somilkhan/piko/compare/v3.10.0...v3.10.1-dev.1) (2026-09-30)
+
+### 🐛 Bug Fixes
+
+* isolate custom like animation settings dependencies ([f0c43ba](https://github.com/somilkhan/piko/commit/f0c43ba5420faa9601a5419fad9084949253b795))
+
 ## [3.10.0](https://github.com/somilkhan/piko/compare/v3.9.0...v3.10.0) (2026-09-30)
 
 ### 🐛 Bug Fixes
