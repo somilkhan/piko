@@ -51,6 +51,7 @@ val changeLikeAnimationPatch =
             sharedExtensionPatch,
             addSettingsActivityPatch,
             nativeSettingsSwitchStylePatch,
+            settingsStatusLoadPatch,
             addResourcesPatch,
         )
         execute {
