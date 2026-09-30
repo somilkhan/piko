@@ -1,3 +1,9 @@
+## [3.10.0-dev.2](https://github.com/somilkhan/piko/compare/v3.10.0-dev.1...v3.10.0-dev.2) (2026-09-30)
+
+### 🐛 Bug Fixes
+
+* make native switch bridge patch idempotent ([0e3b399](https://github.com/somilkhan/piko/commit/0e3b3991ad250fe5405f18492d9726517dcdb44c))
+
 ## [3.10.0-dev.1](https://github.com/somilkhan/piko/compare/v3.9.0...v3.10.0-dev.1) (2026-09-30)
 
 ### 🐛 Bug Fixes
