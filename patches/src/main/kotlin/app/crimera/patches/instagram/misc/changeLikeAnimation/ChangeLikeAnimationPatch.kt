@@ -6,7 +6,11 @@
 
 package app.crimera.patches.instagram.misc.changeLikeAnimation
 
-import app.crimera.patches.instagram.misc.settings.settingsPatch
+import app.crimera.patches.instagram.misc.extension.sharedExtensionPatch
+import app.crimera.patches.instagram.misc.settings.addSettingsActivityPatch
+import app.crimera.patches.instagram.misc.settings.nativeSettingsSwitchStylePatch
+import app.morphe.patches.all.misc.resources.addAppResources
+import app.morphe.patches.all.misc.resources.addResourcesPatch
 import app.crimera.patches.instagram.utils.Constants.COMPATIBILITY_INSTAGRAM
 import app.crimera.patches.instagram.utils.Constants.PATCHES_DESCRIPTOR
 import app.crimera.patches.instagram.utils.enableSettings
@@ -43,8 +47,15 @@ val changeLikeAnimationPatch =
         default = true,
     ) {
         compatibleWith(COMPATIBILITY_INSTAGRAM)
-        dependsOn(settingsPatch)
+        dependsOn(
+            sharedExtensionPatch,
+            addSettingsActivityPatch,
+            nativeSettingsSwitchStylePatch,
+            addResourcesPatch,
+        )
         execute {
+            addAppResources("shared")
+            addAppResources("instagram")
 
             XDTUserActivationMetadataImplInitFingerprint.method.apply {
                 val animationEnumClassType = parameters[0].type
