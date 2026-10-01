@@ -1,3 +1,9 @@
+## [3.10.1-dev.10](https://github.com/somilkhan/piko/compare/v3.10.1-dev.9...v3.10.1-dev.10) (2026-10-01)
+
+### 🐛 Bug Fixes
+
+* **instagram:** anchor change like animation setting to startup loader ([ab639ea](https://github.com/somilkhan/piko/commit/ab639eab50285f52301f01e9c8eecedf6635bbb8))
+
 ## [3.10.1-dev.9](https://github.com/somilkhan/piko/compare/v3.10.1-dev.8...v3.10.1-dev.9) (2026-10-01)
 
 ### 🐛 Bug Fixes
