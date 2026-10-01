@@ -1,3 +1,10 @@
+## [3.10.1-dev.8](https://github.com/somilkhan/piko/compare/v3.10.1-dev.7...v3.10.1-dev.8) (2026-10-01)
+
+### 🐛 Bug Fixes
+
+* make settings loader registration idempotent ([ac5919b](https://github.com/somilkhan/piko/commit/ac5919b455240f0b60c54d4dbbdc77dc839171f1))
+* make settings loader registration idempotent ([1a087f6](https://github.com/somilkhan/piko/commit/1a087f63545de406d720d4b7934ea61507a77ea8))
+
 ## [3.10.1-dev.7](https://github.com/somilkhan/piko/compare/v3.10.1-dev.6...v3.10.1-dev.7) (2026-10-01)
 
 ### 🐛 Bug Fixes

@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-10-01T16:55:24",
-  "description": "## [3.10.1-dev.7](https://github.com/somilkhan/piko/compare/v3.10.1-dev.6...v3.10.1-dev.7) (2026-10-01)\n\n### 🐛 Bug Fixes\n\n* register settings flags in instagram startup hook ([660ae4b](https://github.com/somilkhan/piko/commit/660ae4b80db541ff8b2588a48348f3d8c7ad4338))",
-  "download_url": "https://github.com/somilkhan/piko/releases/download/v3.10.1-dev.7/patches-3.10.1-dev.7.mpp",
-  "signature_download_url": "https://github.com/somilkhan/piko/releases/download/v3.10.1-dev.7/patches-3.10.1-dev.7.mpp.asc",
-  "version": "3.10.1-dev.7"
+  "created_at": "2026-10-01T20:53:28",
+  "description": "## [3.10.1-dev.8](https://github.com/somilkhan/piko/compare/v3.10.1-dev.7...v3.10.1-dev.8) (2026-10-01)\n\n### 🐛 Bug Fixes\n\n* make settings loader registration idempotent ([ac5919b](https://github.com/somilkhan/piko/commit/ac5919b455240f0b60c54d4dbbdc77dc839171f1))\n* make settings loader registration idempotent ([1a087f6](https://github.com/somilkhan/piko/commit/1a087f63545de406d720d4b7934ea61507a77ea8))",
+  "download_url": "https://github.com/somilkhan/piko/releases/download/v3.10.1-dev.8/patches-3.10.1-dev.8.mpp",
+  "signature_download_url": "https://github.com/somilkhan/piko/releases/download/v3.10.1-dev.8/patches-3.10.1-dev.8.mpp.asc",
+  "version": "3.10.1-dev.8"
 }
