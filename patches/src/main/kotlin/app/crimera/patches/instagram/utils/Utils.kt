@@ -13,19 +13,34 @@ import app.crimera.patches.instagram.utils.Constants.LOAD_FLAGS_DESCRIPTOR
 import app.crimera.patches.instagram.utils.Constants.SSTS_DESCRIPTOR
 import app.morphe.patcher.extensions.InstructionExtensions.addInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.instructions
+import app.morphe.util.indexOfFirstInstruction
+import com.android.tools.smali.dexlib2.Opcode
 import app.morphe.patcher.patch.BytecodePatchContext
 
 context(patchContext: BytecodePatchContext)
-fun enableSettings(functionName: String) {
+fun ensureSettingsStatusLoad() {
+    val method = instagramInitHook.fingerprint.method
     val loadCall = SSTS_DESCRIPTOR.format("load")
-    val loadIndex = instagramInitHook.fingerprint.method.instructions.indexOfFirst {
+    if (method.instructions.any { it.toString() == loadCall }) return
+
+    val firstInvokeSuperIndex = method.indexOfFirstInstruction(Opcode.INVOKE_SUPER)
+    method.addInstruction(firstInvokeSuperIndex + 1, loadCall)
+}
+
+context(patchContext: BytecodePatchContext)
+fun enableSettings(functionName: String) {
+    ensureSettingsStatusLoad()
+
+    val method = instagramInitHook.fingerprint.method
+    val loadCall = SSTS_DESCRIPTOR.format("load")
+    val loadIndex = method.instructions.indexOfFirst {
         it.toString() == loadCall
     }
     check(loadIndex >= 0) {
-        "SettingsStatus.load() call was not installed before enabling setting: $functionName"
+        "SettingsStatus.load() call could not be installed: $functionName"
     }
 
-    instagramInitHook.fingerprint.method.addInstruction(
+    method.addInstruction(
         loadIndex,
         SSTS_DESCRIPTOR.format(functionName),
     )
