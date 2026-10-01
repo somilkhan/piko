@@ -1,3 +1,10 @@
+## [3.10.1-dev.9](https://github.com/somilkhan/piko/compare/v3.10.1-dev.8...v3.10.1-dev.9) (2026-10-01)
+
+### 🐛 Bug Fixes
+
+* restore settings loader and flag registration separation ([22ae0ea](https://github.com/somilkhan/piko/commit/22ae0eab09c3e327f71f4a62b48ead10be1bc3a8))
+* restore settings loader and flag registration separation ([bff9b77](https://github.com/somilkhan/piko/commit/bff9b77aa4081b1633e159155053871c6385b38c))
+
 ## [3.10.1-dev.8](https://github.com/somilkhan/piko/compare/v3.10.1-dev.7...v3.10.1-dev.8) (2026-10-01)
 
 ### 🐛 Bug Fixes

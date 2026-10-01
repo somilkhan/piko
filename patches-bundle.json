@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-10-01T20:53:28",
-  "description": "## [3.10.1-dev.8](https://github.com/somilkhan/piko/compare/v3.10.1-dev.7...v3.10.1-dev.8) (2026-10-01)\n\n### 🐛 Bug Fixes\n\n* make settings loader registration idempotent ([ac5919b](https://github.com/somilkhan/piko/commit/ac5919b455240f0b60c54d4dbbdc77dc839171f1))\n* make settings loader registration idempotent ([1a087f6](https://github.com/somilkhan/piko/commit/1a087f63545de406d720d4b7934ea61507a77ea8))",
-  "download_url": "https://github.com/somilkhan/piko/releases/download/v3.10.1-dev.8/patches-3.10.1-dev.8.mpp",
-  "signature_download_url": "https://github.com/somilkhan/piko/releases/download/v3.10.1-dev.8/patches-3.10.1-dev.8.mpp.asc",
-  "version": "3.10.1-dev.8"
+  "created_at": "2026-10-01T21:07:35",
+  "description": "## [3.10.1-dev.9](https://github.com/somilkhan/piko/compare/v3.10.1-dev.8...v3.10.1-dev.9) (2026-10-01)\n\n### 🐛 Bug Fixes\n\n* restore settings loader and flag registration separation ([22ae0ea](https://github.com/somilkhan/piko/commit/22ae0eab09c3e327f71f4a62b48ead10be1bc3a8))\n* restore settings loader and flag registration separation ([bff9b77](https://github.com/somilkhan/piko/commit/bff9b77aa4081b1633e159155053871c6385b38c))",
+  "download_url": "https://github.com/somilkhan/piko/releases/download/v3.10.1-dev.9/patches-3.10.1-dev.9.mpp",
+  "signature_download_url": "https://github.com/somilkhan/piko/releases/download/v3.10.1-dev.9/patches-3.10.1-dev.9.mpp.asc",
+  "version": "3.10.1-dev.9"
 }
