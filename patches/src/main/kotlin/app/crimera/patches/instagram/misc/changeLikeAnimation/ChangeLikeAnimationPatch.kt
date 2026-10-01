@@ -6,23 +6,18 @@
 
 package app.crimera.patches.instagram.misc.changeLikeAnimation
 
-import app.crimera.patches.instagram.misc.extension.hooks.instagramInitHook
 import app.crimera.patches.instagram.misc.settings.settingsPatch
 import app.crimera.patches.instagram.utils.Constants.COMPATIBILITY_INSTAGRAM
 import app.crimera.patches.instagram.utils.Constants.PATCHES_DESCRIPTOR
-import app.crimera.patches.instagram.utils.Constants.SSTS_DESCRIPTOR
 import app.crimera.utils.changeFirstString
 import app.crimera.utils.classNameToExtension
+import app.crimera.utils.enableSettings
 import app.morphe.patches.all.misc.resources.addAppResources
 import app.morphe.patcher.Fingerprint
-import app.morphe.patcher.extensions.InstructionExtensions.addInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructionsWithLabels
 import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
-import app.morphe.patcher.extensions.InstructionExtensions.instructions
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.util.smali.ExternalLabel
-import app.morphe.util.indexOfFirstInstruction
-import com.android.tools.smali.dexlib2.Opcode
 
 private const val EXTENSION_CLASS_DESCRIPTOR = "$PATCHES_DESCRIPTOR/feed/ChangeLikeAnimationPatch;"
 
@@ -73,19 +68,7 @@ val changeLikeAnimationPatch =
                 )
             }
 
-            // SettingsStatus.load() snapshots the feature flags into FLAGS.
-            // Set this flag immediately before that load call so the snapshot contains it.
-            instagramInitHook.fingerprint.method.apply {
-                val loadCall = SSTS_DESCRIPTOR.format("load")
-                val loadIndex = instructions.indexOfFirst { it.toString() == loadCall }
-                if (loadIndex < 0) {
-                    throw IllegalStateException("SettingsStatus.load() call was not installed")
-                }
-                val enableCall = SSTS_DESCRIPTOR.format("changeLikeAnimation")
-                if (instructions.none { it.toString() == enableCall }) {
-                    addInstruction(loadIndex, enableCall)
-                }
-            }
+            enableSettings("changeLikeAnimation")
         }
 
         execute {
