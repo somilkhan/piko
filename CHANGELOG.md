@@ -1,3 +1,11 @@
+## [3.10.1-dev.6](https://github.com/somilkhan/piko/compare/v3.10.1-dev.5...v3.10.1-dev.6) (2026-10-01)
+
+### 🐛 Bug Fixes
+
+* import settings flag helper from instagram utils ([37a953f](https://github.com/somilkhan/piko/commit/37a953f96a446747cebaeb61c96abfbb698c2f1f))
+* load settings status from settings startup hook ([9310eda](https://github.com/somilkhan/piko/commit/9310edaaca6bc0a3bf606758ff93108a72975824))
+* use native settings flag registration for like animation ([a0dff1f](https://github.com/somilkhan/piko/commit/a0dff1ff399b3f135c32048af0a85ecb85d6819a))
+
 ## [3.10.1-dev.5](https://github.com/somilkhan/piko/compare/v3.10.1-dev.4...v3.10.1-dev.5) (2026-10-01)
 
 ### 🐛 Bug Fixes
