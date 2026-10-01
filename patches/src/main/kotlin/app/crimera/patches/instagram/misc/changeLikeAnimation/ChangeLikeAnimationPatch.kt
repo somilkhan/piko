@@ -6,10 +6,7 @@
 
 package app.crimera.patches.instagram.misc.changeLikeAnimation
 
-import app.crimera.patches.instagram.misc.extension.sharedExtensionPatch
-import app.crimera.patches.instagram.misc.settings.addSettingsActivityPatch
-import app.crimera.patches.instagram.misc.settings.nativeSettingsSwitchStylePatch
-import app.crimera.patches.instagram.misc.settings.settingsStatusLoadPatch
+import app.crimera.patches.instagram.misc.settings.settingsPatch
 import app.morphe.patches.all.misc.resources.addAppResources
 import app.morphe.patches.all.misc.resources.addResourcesPatch
 import app.crimera.patches.instagram.utils.Constants.COMPATIBILITY_INSTAGRAM
@@ -48,13 +45,7 @@ val changeLikeAnimationPatch =
         default = true,
     ) {
         compatibleWith(COMPATIBILITY_INSTAGRAM)
-        dependsOn(
-            sharedExtensionPatch,
-            addSettingsActivityPatch,
-            nativeSettingsSwitchStylePatch,
-            settingsStatusLoadPatch,
-            addResourcesPatch,
-        )
+        dependsOn(settingsPatch)
         execute {
             addAppResources("shared")
             addAppResources("instagram")
