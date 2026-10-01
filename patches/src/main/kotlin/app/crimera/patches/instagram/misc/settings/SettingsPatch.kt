@@ -23,7 +23,6 @@ import app.crimera.patches.instagram.utils.Constants.COMPATIBILITY_INSTAGRAM
 import app.crimera.patches.instagram.utils.Constants.CONSTANTS_DESCRIPTOR
 import app.crimera.patches.instagram.utils.Constants.LOAD_FLAGS_DESCRIPTOR
 import app.crimera.patches.instagram.utils.Constants.SSTS_DESCRIPTOR
-import app.crimera.patches.instagram.utils.ensureSettingsStatusLoad
 import app.crimera.patches.instagram.utils.Constants.PATCHES_DESCRIPTOR
 import app.morphe.patcher.extensions.InstructionExtensions.addInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
@@ -63,7 +62,6 @@ val settingsPatch =
             addResourcesPatch,
         )
         execute {
-            ensureSettingsStatusLoad()
             addAppResources("shared")
             addAppResources("instagram")
 
@@ -91,6 +89,7 @@ val settingsPatch =
                     new-instance v$freeRegister, Lapp/morphe/extension/crimera/CustomCrashHandler;
                     invoke-direct {v$freeRegister, v$contextRegister}, Lapp/morphe/extension/crimera/CustomCrashHandler;-><init>(Landroid/content/Context;)V
                     invoke-static {v$freeRegister}, Ljava/lang/Thread;->setDefaultUncaughtExceptionHandler(Ljava/lang/Thread${'$'}UncaughtExceptionHandler;)V
+                    ${SSTS_DESCRIPTOR.format("load")}
                     ${LOAD_FLAGS_DESCRIPTOR.format("load")}
                     ${LOAD_FLAGS_DESCRIPTOR.format("load")}
                     invoke-static {}, $CONSTANTS_DESCRIPTOR/Constants;->load()V
