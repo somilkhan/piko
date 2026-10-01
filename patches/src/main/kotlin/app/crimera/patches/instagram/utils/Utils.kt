@@ -6,17 +6,27 @@
 
 package app.crimera.patches.instagram.utils
 
+import app.crimera.patches.instagram.misc.extension.hooks.instagramInitHook
 import app.crimera.patches.instagram.misc.settings.HookFlagsLoadFingerprint
 import app.crimera.patches.instagram.misc.settings.SettingsStatusLoadFingerprint
 import app.crimera.patches.instagram.utils.Constants.LOAD_FLAGS_DESCRIPTOR
 import app.crimera.patches.instagram.utils.Constants.SSTS_DESCRIPTOR
 import app.morphe.patcher.extensions.InstructionExtensions.addInstruction
+import app.morphe.patcher.extensions.InstructionExtensions.instructions
 import app.morphe.patcher.patch.BytecodePatchContext
 
 context(patchContext: BytecodePatchContext)
 fun enableSettings(functionName: String) {
-    SettingsStatusLoadFingerprint.method.addInstruction(
-        0,
+    val loadCall = SSTS_DESCRIPTOR.format("load")
+    val loadIndex = instagramInitHook.fingerprint.method.instructions.indexOfFirst {
+        it.toString() == loadCall
+    }
+    check(loadIndex >= 0) {
+        "SettingsStatus.load() call was not installed before enabling setting: $functionName"
+    }
+
+    instagramInitHook.fingerprint.method.addInstruction(
+        loadIndex,
         SSTS_DESCRIPTOR.format(functionName),
     )
 }
