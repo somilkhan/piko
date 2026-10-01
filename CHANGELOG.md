@@ -1,3 +1,9 @@
+## [3.10.1-dev.5](https://github.com/somilkhan/piko/compare/v3.10.1-dev.4...v3.10.1-dev.5) (2026-10-01)
+
+### 🐛 Bug Fixes
+
+* initialize like animation flag before settings load ([b86d8c7](https://github.com/somilkhan/piko/commit/b86d8c79fe0d56121858f2c35254bdb112aa3eca))
+
 ## [3.10.1-dev.4](https://github.com/somilkhan/piko/compare/v3.10.1-dev.3...v3.10.1-dev.4) (2026-10-01)
 
 ### 🐛 Bug Fixes

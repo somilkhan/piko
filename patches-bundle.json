@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-10-01T11:01:37",
-  "description": "## [3.10.1-dev.4](https://github.com/somilkhan/piko/compare/v3.10.1-dev.3...v3.10.1-dev.4) (2026-10-01)\n\n### 🐛 Bug Fixes\n\n* initialize like animation setting in app startup hook ([900ed0a](https://github.com/somilkhan/piko/commit/900ed0a91d7da6f4442866576165c22387ce76dd))",
-  "download_url": "https://github.com/somilkhan/piko/releases/download/v3.10.1-dev.4/patches-3.10.1-dev.4.mpp",
-  "signature_download_url": "https://github.com/somilkhan/piko/releases/download/v3.10.1-dev.4/patches-3.10.1-dev.4.mpp.asc",
-  "version": "3.10.1-dev.4"
+  "created_at": "2026-10-01T11:37:45",
+  "description": "## [3.10.1-dev.5](https://github.com/somilkhan/piko/compare/v3.10.1-dev.4...v3.10.1-dev.5) (2026-10-01)\n\n### 🐛 Bug Fixes\n\n* initialize like animation flag before settings load ([b86d8c7](https://github.com/somilkhan/piko/commit/b86d8c79fe0d56121858f2c35254bdb112aa3eca))",
+  "download_url": "https://github.com/somilkhan/piko/releases/download/v3.10.1-dev.5/patches-3.10.1-dev.5.mpp",
+  "signature_download_url": "https://github.com/somilkhan/piko/releases/download/v3.10.1-dev.5/patches-3.10.1-dev.5.mpp.asc",
+  "version": "3.10.1-dev.5"
 }
