@@ -1,3 +1,9 @@
+## [3.10.1-dev.3](https://github.com/somilkhan/piko/compare/v3.10.1-dev.2...v3.10.1-dev.3) (2026-10-01)
+
+### 🐛 Bug Fixes
+
+* restore canonical settings dependency for like animation ([0ca8363](https://github.com/somilkhan/piko/commit/0ca836341e0f38aae896485d04f51d104ae3c877))
+
 ## [3.10.1-dev.2](https://github.com/somilkhan/piko/compare/v3.10.1-dev.1...v3.10.1-dev.2) (2026-09-30)
 
 ### 🐛 Bug Fixes
