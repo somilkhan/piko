@@ -73,14 +73,17 @@ val changeLikeAnimationPatch =
                 )
             }
 
-            // Set the feature flag directly in the target app's startup hook.
-            // This avoids relying on mutating the precompiled SettingsStatus extension
-            // after it has already been packaged into the MPP.
+            // SettingsStatus.load() snapshots the feature flags into FLAGS.
+            // Set this flag immediately before that load call so the snapshot contains it.
             instagramInitHook.fingerprint.method.apply {
-                val firstInvokeSuperIndex = indexOfFirstInstruction(Opcode.INVOKE_SUPER)
+                val loadCall = SSTS_DESCRIPTOR.format("load")
+                val loadIndex = instructions.indexOfFirst { it.toString() == loadCall }
+                if (loadIndex < 0) {
+                    throw IllegalStateException("SettingsStatus.load() call was not installed")
+                }
                 val enableCall = SSTS_DESCRIPTOR.format("changeLikeAnimation")
                 if (instructions.none { it.toString() == enableCall }) {
-                    addInstruction(firstInvokeSuperIndex + 1, enableCall)
+                    addInstruction(loadIndex, enableCall)
                 }
             }
         }
