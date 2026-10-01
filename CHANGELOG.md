@@ -1,3 +1,9 @@
+## [3.10.1-dev.4](https://github.com/somilkhan/piko/compare/v3.10.1-dev.3...v3.10.1-dev.4) (2026-10-01)
+
+### 🐛 Bug Fixes
+
+* initialize like animation setting in app startup hook ([900ed0a](https://github.com/somilkhan/piko/commit/900ed0a91d7da6f4442866576165c22387ce76dd))
+
 ## [3.10.1-dev.3](https://github.com/somilkhan/piko/compare/v3.10.1-dev.2...v3.10.1-dev.3) (2026-10-01)
 
 ### 🐛 Bug Fixes
