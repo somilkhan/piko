@@ -1,3 +1,9 @@
+## [3.10.1-dev.7](https://github.com/somilkhan/piko/compare/v3.10.1-dev.6...v3.10.1-dev.7) (2026-10-01)
+
+### 🐛 Bug Fixes
+
+* register settings flags in instagram startup hook ([660ae4b](https://github.com/somilkhan/piko/commit/660ae4b80db541ff8b2588a48348f3d8c7ad4338))
+
 ## [3.10.1-dev.6](https://github.com/somilkhan/piko/compare/v3.10.1-dev.5...v3.10.1-dev.6) (2026-10-01)
 
 ### 🐛 Bug Fixes
