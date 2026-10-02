@@ -6,7 +6,7 @@ on:
     branches:
       - main
       - dev
-      
+
 permissions:
   contents: read
 
@@ -30,3 +30,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: ./gradlew clean buildAndroid
+
+      - name: Upload MPP patch bundle
+        uses: actions/upload-artifact@v6
+        with:
+          name: piko-mpp
+          path: patches/build/libs/patches-*.mpp
+          if-no-files-found: error
+          retention-days: 7
