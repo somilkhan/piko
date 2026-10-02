@@ -155,25 +155,21 @@ private fun findProfileActionBarInjectionIndex(
         }
     }
 
-    val iteratorIndex = removeAllViewsCalls.last().index + 1
-    val iteratorInstruction = method.instructions.getOrNull(iteratorIndex)
-        ?: throw PatchException("Profile action bar builder has no instruction after removeAllViews")
-    val iteratorReference =
-        (iteratorInstruction as? ReferenceInstruction)?.reference as? MethodReference
-            ?: throw PatchException("Instruction after removeAllViews is not a method invocation")
-    val iteratorRegisters = iteratorInstruction.registersUsed
-    if (
-        !iteratorReference.isListIterator() ||
-        iteratorRegisters.size != 1 ||
-        !registerComesFromParameter(
+    val searchStart = removeAllViewsCalls.last().index + 1
+    val iteratorIndex = (searchStart until method.instructions.size).firstOrNull { index ->
+        val instruction = method.instructions[index]
+        val reference =
+            (instruction as? ReferenceInstruction)?.reference as? MethodReference
+            ?: return@firstOrNull false
+        if (!reference.isListIterator()) return@firstOrNull false
+        val registers = instruction.registersUsed
+        registers.size == 1 && registerComesFromParameter(
             method,
-            iteratorIndex,
-            iteratorRegisters.single(),
+            index,
+            registers.single(),
             listParameterRegister,
         )
-    ) {
-        throw PatchException("Expected List.iterator from the list parameter after removeAllViews")
-    }
+    } ?: throw PatchException("Expected List.iterator from the list parameter after removeAllViews")
 
     return iteratorIndex
 }
