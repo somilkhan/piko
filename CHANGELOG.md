@@ -1,3 +1,9 @@
+## [3.10.1-dev.18](https://github.com/somilkhan/piko/compare/v3.10.1-dev.17...v3.10.1-dev.18) (2026-10-02)
+
+### 🐛 Bug Fixes
+
+* **instagram:** resolve animation enum during finalization ([9f41bce](https://github.com/somilkhan/piko/commit/9f41bcecc44e0f69da005e6b2d80ac3252d457a1))
+
 ## [3.10.1-dev.17](https://github.com/somilkhan/piko/compare/v3.10.1-dev.16...v3.10.1-dev.17) (2026-10-02)
 
 ### 🐛 Bug Fixes
