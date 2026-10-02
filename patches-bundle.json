@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-10-01T21:30:01",
-  "description": "## [3.10.1-dev.10](https://github.com/somilkhan/piko/compare/v3.10.1-dev.9...v3.10.1-dev.10) (2026-10-01)\n\n### 🐛 Bug Fixes\n\n* **instagram:** anchor change like animation setting to startup loader ([ab639ea](https://github.com/somilkhan/piko/commit/ab639eab50285f52301f01e9c8eecedf6635bbb8))",
-  "download_url": "https://github.com/somilkhan/piko/releases/download/v3.10.1-dev.10/patches-3.10.1-dev.10.mpp",
-  "signature_download_url": "https://github.com/somilkhan/piko/releases/download/v3.10.1-dev.10/patches-3.10.1-dev.10.mpp.asc",
-  "version": "3.10.1-dev.10"
+  "created_at": "2026-10-02T09:34:15",
+  "description": "## [3.10.1-dev.11](https://github.com/somilkhan/piko/compare/v3.10.1-dev.10...v3.10.1-dev.11) (2026-10-02)\n\n### 🐛 Bug Fixes\n\n* **instagram:** enable change like animation in settings loader ([b77c29d](https://github.com/somilkhan/piko/commit/b77c29d950de3ae6c13597d9eca42f577959d2dc))",
+  "download_url": "https://github.com/somilkhan/piko/releases/download/v3.10.1-dev.11/patches-3.10.1-dev.11.mpp",
+  "signature_download_url": "https://github.com/somilkhan/piko/releases/download/v3.10.1-dev.11/patches-3.10.1-dev.11.mpp.asc",
+  "version": "3.10.1-dev.11"
 }

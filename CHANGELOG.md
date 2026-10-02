@@ -1,3 +1,9 @@
+## [3.10.1-dev.11](https://github.com/somilkhan/piko/compare/v3.10.1-dev.10...v3.10.1-dev.11) (2026-10-02)
+
+### 🐛 Bug Fixes
+
+* **instagram:** enable change like animation in settings loader ([b77c29d](https://github.com/somilkhan/piko/commit/b77c29d950de3ae6c13597d9eca42f577959d2dc))
+
 ## [3.10.1-dev.10](https://github.com/somilkhan/piko/compare/v3.10.1-dev.9...v3.10.1-dev.10) (2026-10-01)
 
 ### 🐛 Bug Fixes
