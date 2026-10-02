@@ -12,6 +12,7 @@ jobs:
     name: Release
     permissions:
       contents: write
+      workflows: write
       packages: write
       id-token: write
       attestations: write
