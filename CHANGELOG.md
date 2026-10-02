@@ -1,3 +1,9 @@
+## [3.10.1-dev.12](https://github.com/somilkhan/piko/compare/v3.10.1-dev.11...v3.10.1-dev.12) (2026-10-02)
+
+### 🐛 Bug Fixes
+
+* **instagram:** refresh settings status before building Piko settings ([85177c5](https://github.com/somilkhan/piko/commit/85177c5e5687287e3449890d38edbbf31eb32ae0))
+
 ## [3.10.1-dev.11](https://github.com/somilkhan/piko/compare/v3.10.1-dev.10...v3.10.1-dev.11) (2026-10-02)
 
 ### 🐛 Bug Fixes
