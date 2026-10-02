@@ -9,9 +9,9 @@ package app.crimera.patches.instagram.misc.changeLikeAnimation
 import app.crimera.patches.instagram.misc.settings.settingsPatch
 import app.crimera.patches.instagram.utils.Constants.COMPATIBILITY_INSTAGRAM
 import app.crimera.patches.instagram.utils.Constants.PATCHES_DESCRIPTOR
-import app.crimera.patches.instagram.utils.enableSettings
 import app.crimera.utils.changeFirstString
 import app.crimera.utils.classNameToExtension
+import app.crimera.utils.enableSettings
 import app.morphe.patcher.Fingerprint
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructionsWithLabels
 import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
@@ -30,9 +30,9 @@ internal object LikeActionViewSetUpCustomLikesAnimationFingerprint : Fingerprint
     definingClass = "Lcom/instagram/ui/mediaactions/LikeActionView;",
 )
 
-internal object XDTUserActivationMetadataImplInitFingerprint : Fingerprint(
-    name = "<init>",
-    definingClass = "Lcom/instagram/api/schemas/XDTUserActivationMetadataImpl;",
+internal object LikeActionViewInitAnimationFingerprint : Fingerprint(
+    name = "A00",
+    definingClass = "Lcom/instagram/ui/mediaactions/LikeActionView;",
 )
 
 @Suppress("unused")
@@ -46,17 +46,15 @@ val changeLikeAnimationPatch =
         dependsOn(settingsPatch)
 
         execute {
-            XDTUserActivationMetadataImplInitFingerprint.method.apply {
+            LikeActionViewInitAnimationFingerprint.method.apply {
                 addInstructionsWithLabels(
                     0,
                     """
-                    sget-object p2, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-                    invoke-static {p1}, $EXTENSION_CLASS_DESCRIPTOR->changeLikeAnimation(Ljava/lang/Object;)Ljava/lang/Object;
+                    invoke-static {p2}, $EXTENSION_CLASS_DESCRIPTOR->changeLikeAnimation(Ljava/lang/Object;)Ljava/lang/Object;
                     move-result-object v0
                     if-eqz v0, :piko
-                    sget-object p2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-                    check-cast v0, ${LikeActionViewSetUpCustomLikesAnimationFingerprint.method.parameters[0].type}
-                    move-object/from16 p1, v0
+                    check-cast v0, ${LikeActionViewInitAnimationFingerprint.method.parameters[1].type}
+                    move-object/from16 p2, v0
                     """.trimIndent(),
                     ExternalLabel("piko", getInstruction(0)),
                 )
