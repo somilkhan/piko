@@ -47,8 +47,6 @@ val changeLikeAnimationPatch =
 
         execute {
             XDTUserActivationMetadataImplInitFingerprint.method.apply {
-                val animationEnumClassType = parameters[0].type
-
                 addInstructionsWithLabels(
                     0,
                     """
@@ -57,7 +55,7 @@ val changeLikeAnimationPatch =
                     move-result-object v0
                     if-eqz v0, :piko
                     sget-object p2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-                    check-cast v0, $animationEnumClassType
+                    check-cast v0, ${LikeActionViewSetUpCustomLikesAnimationFingerprint.method.parameters[0].type}
                     move-object/from16 p1, v0
                     """.trimIndent(),
                     ExternalLabel("piko", getInstruction(0)),
@@ -68,23 +66,22 @@ val changeLikeAnimationPatch =
         execute {
             LikeActionViewSetUpCustomLikesAnimationFingerprint.method.apply {
                 addInstructionsWithLabels(
-                    0,
+                    16,
                     """
                     invoke-static {p0}, $EXTENSION_CLASS_DESCRIPTOR->createCustomLikeAnimationDrawable(Ljava/lang/Object;)Landroid/graphics/drawable/Drawable;
                     move-result-object v0
                     if-eqz v0, :piko_original_like_animation
-                    iget-object v1, p0, Lcom/instagram/ui/mediaactions/LikeActionView;->A00:LX/06GF;
-                    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+                    invoke-virtual {v4, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
                     goto :piko_continue_like_animation
                     """.trimIndent(),
-                    ExternalLabel("piko_original_like_animation", getInstruction(0)),
-                    ExternalLabel("piko_continue_like_animation", getInstruction(9)),
+                    ExternalLabel("piko_original_like_animation", getInstruction(16)),
+                    ExternalLabel("piko_continue_like_animation", getInstruction(19)),
                 )
             }
         }
 
         finalize {
-            val animationEnumClassType = XDTUserActivationMetadataImplInitFingerprint.method.parameters[0].type
+            val animationEnumClassType = LikeActionViewSetUpCustomLikesAnimationFingerprint.method.parameters[0].type
             ChangeLikeAnimationExtensionFingerprint.changeFirstString(
                 classNameToExtension(animationEnumClassType)
             )
