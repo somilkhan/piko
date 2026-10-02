@@ -43,6 +43,17 @@
     ],
     "gradle-semantic-release-plugin",
     [
+      "@semantic-release/github",
+      {
+        "assets": [
+          {
+            "path": "patches/build/libs/patches-!(*sources*|*javadoc*).mpp?(.asc)"
+          }
+        ],
+        "successComment": false
+      }
+    ],
+    [
       "@semantic-release/exec",
       {
         "prepareCmd": "./gradlew generatePatchesList \
