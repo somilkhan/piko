@@ -1,3 +1,14 @@
+## [3.10.1-dev.14](https://github.com/somilkhan/piko/compare/v3.10.1-dev.13...v3.10.1-dev.14) (2026-10-02)
+
+### 🐛 Bug Fixes
+
+* **instagram:** complete native like animation render hook ([53e1b08](https://github.com/somilkhan/piko/commit/53e1b08d21ce7f79aafe7dfbb519992f844fc49c))
+* **instagram:** patch like animation at native render configuration ([dd0f2a8](https://github.com/somilkhan/piko/commit/dd0f2a8bc79c086302d5e80aeacabdc9ed424701))
+* **instagram:** patch like animation at native render configuration ([4c8ba74](https://github.com/somilkhan/piko/commit/4c8ba7417576754de46f2c8ca2e5345112c9b3e7))
+* **instagram:** patch the render-animation mapper directly ([3d6d206](https://github.com/somilkhan/piko/commit/3d6d2066a9544b23591ad787d9b57d8c2a0b0b6d))
+* **instagram:** remove unsupported instruction collection check ([2254df7](https://github.com/somilkhan/piko/commit/2254df7ff36124592938f33f3261ffec6b09a9b7))
+* **instagram:** tolerate changed home action null guard ([0556406](https://github.com/somilkhan/piko/commit/055640601e7cf9e69f3a879983a32c2b2111721e))
+
 ## [3.10.1-dev.13](https://github.com/somilkhan/piko/compare/v3.10.1-dev.12...v3.10.1-dev.13) (2026-10-02)
 
 ### 🐛 Bug Fixes
