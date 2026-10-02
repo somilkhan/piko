@@ -40,6 +40,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Remove stale dev.2 tag
+        run: |
+          stale_sha="fbf220bc39313037b3499e52537ff67b1be710b3"
+          if git rev-parse -q --verify refs/tags/v3.10.0-dev.2 >/dev/null 2>&1 && [ "$(git rev-list -n1 v3.10.0-dev.2)" = "$stale_sha" ]; then
+            git tag -d v3.10.0-dev.2
+            git push origin --delete v3.10.0-dev.2 2>/dev/null || true
+          fi
+
       - name: Release
         uses: cycjimmy/semantic-release-action@v5
         id: release
