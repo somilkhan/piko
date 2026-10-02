@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-10-02T13:25:45",
-  "description": "## [3.10.1-dev.15](https://github.com/somilkhan/piko/compare/v3.10.1-dev.14...v3.10.1-dev.15) (2026-10-02)\n\n### 🐛 Bug Fixes\n\n* **instagram:** tolerate changed profile action bar iterator sequence ([e37d9eb](https://github.com/somilkhan/piko/commit/e37d9ebecce7c969dc430a7c341ac5bb9fe56de1))",
-  "download_url": "https://github.com/somilkhan/piko/releases/download/v3.10.1-dev.15/patches-3.10.1-dev.15.mpp",
-  "signature_download_url": "https://github.com/somilkhan/piko/releases/download/v3.10.1-dev.15/patches-3.10.1-dev.15.mpp.asc",
-  "version": "3.10.1-dev.15"
+  "created_at": "2026-10-02T14:38:39",
+  "description": "## [3.10.1-dev.16](https://github.com/somilkhan/piko/compare/v3.10.1-dev.15...v3.10.1-dev.16) (2026-10-02)\n\n### 🐛 Bug Fixes\n\n* **instagram:** correct custom like drawable smali invoke syntax ([7c15966](https://github.com/somilkhan/piko/commit/7c1596635428ae66dc15f4d81eaa2c34ac1c5e79))",
+  "download_url": "https://github.com/somilkhan/piko/releases/download/v3.10.1-dev.16/patches-3.10.1-dev.16.mpp",
+  "signature_download_url": "https://github.com/somilkhan/piko/releases/download/v3.10.1-dev.16/patches-3.10.1-dev.16.mpp.asc",
+  "version": "3.10.1-dev.16"
 }

@@ -1,3 +1,9 @@
+## [3.10.1-dev.16](https://github.com/somilkhan/piko/compare/v3.10.1-dev.15...v3.10.1-dev.16) (2026-10-02)
+
+### 🐛 Bug Fixes
+
+* **instagram:** correct custom like drawable smali invoke syntax ([7c15966](https://github.com/somilkhan/piko/commit/7c1596635428ae66dc15f4d81eaa2c34ac1c5e79))
+
 ## [3.10.1-dev.15](https://github.com/somilkhan/piko/compare/v3.10.1-dev.14...v3.10.1-dev.15) (2026-10-02)
 
 ### 🐛 Bug Fixes
