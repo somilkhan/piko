@@ -45,11 +45,9 @@ val hideHomeActionButtonsPatch = bytecodePatch {
         }.singleOrNull()?.index
             ?: throw PatchException("Expected one home action name lookup")
         val result = method.getInstruction(callIndex + 1)
-        val nullCheck = method.getInstruction(callIndex + 2)
         if (result.opcode != Opcode.MOVE_RESULT_OBJECT ||
-            result.registersUsed.size != 1 || nullCheck.opcode != Opcode.IF_EQZ ||
-            nullCheck.registersUsed.singleOrNull() != result.registersUsed.single()
-        ) throw PatchException("Expected home action name null guard")
+            result.registersUsed.size != 1
+        ) throw PatchException("Expected home action name move-result")
         val register = result.registersUsed.single()
         method.addInstructions(
             callIndex + 2,
