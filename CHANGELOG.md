@@ -1,3 +1,9 @@
+## [3.10.1-dev.13](https://github.com/somilkhan/piko/compare/v3.10.1-dev.12...v3.10.1-dev.13) (2026-10-02)
+
+### 🐛 Bug Fixes
+
+* **instagram:** enable like animation setting directly in Piko settings ([fb79ee0](https://github.com/somilkhan/piko/commit/fb79ee06c9a044b1c75d51be851ef0e5db667d84))
+
 ## [3.10.1-dev.12](https://github.com/somilkhan/piko/compare/v3.10.1-dev.11...v3.10.1-dev.12) (2026-10-02)
 
 ### 🐛 Bug Fixes
