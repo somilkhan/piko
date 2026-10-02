@@ -1,3 +1,9 @@
+## [3.10.1-dev.19](https://github.com/somilkhan/piko/compare/v3.10.1-dev.18...v3.10.1-dev.19) (2026-10-02)
+
+### 🐛 Bug Fixes
+
+* **instagram:** target 439 like animation enum and image view ([e6b0aaf](https://github.com/somilkhan/piko/commit/e6b0aaf0cbfea7c156cfcdec8d1baeaeb37aaaa4))
+
 ## [3.10.1-dev.18](https://github.com/somilkhan/piko/compare/v3.10.1-dev.17...v3.10.1-dev.18) (2026-10-02)
 
 ### 🐛 Bug Fixes
