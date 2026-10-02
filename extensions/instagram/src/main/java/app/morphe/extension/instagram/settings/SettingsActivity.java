@@ -55,8 +55,9 @@ public class SettingsActivity extends Activity {
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
 
-        // Refresh patch capability flags before the settings fragment reads them.
-        SettingsStatus.load();
+        // The like-animation setting is a capability of this patched settings screen.
+        // Set its gate directly before the fragment evaluates SettingsStatus.miscSection().
+        SettingsStatus.changeLikeAnimation();
 
         String displayTitle = null;
         String fragmentName = null;
