@@ -9,9 +9,9 @@ package app.crimera.patches.instagram.misc.changeLikeAnimation
 import app.crimera.patches.instagram.misc.settings.settingsPatch
 import app.crimera.patches.instagram.utils.Constants.COMPATIBILITY_INSTAGRAM
 import app.crimera.patches.instagram.utils.Constants.PATCHES_DESCRIPTOR
+import app.crimera.patches.instagram.utils.enableSettings
 import app.crimera.utils.changeFirstString
 import app.crimera.utils.classNameToExtension
-import app.crimera.utils.enableSettings
 import app.morphe.patcher.Fingerprint
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructionsWithLabels
 import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
@@ -25,13 +25,13 @@ internal object ChangeLikeAnimationExtensionFingerprint : Fingerprint(
     definingClass = EXTENSION_CLASS_DESCRIPTOR,
 )
 
-internal object LikeActionViewSetUpCustomLikesAnimationFingerprint : Fingerprint(
-    name = "setUpCustomLikesAnimation",
-    definingClass = "Lcom/instagram/ui/mediaactions/LikeActionView;",
+internal object XDTUserActivationMetadataImplInitFingerprint : Fingerprint(
+    name = "<init>",
+    definingClass = "Lcom/instagram/api/schemas/XDTUserActivationMetadataImpl;",
 )
 
-internal object LikeActionViewInitAnimationFingerprint : Fingerprint(
-    name = "A00",
+internal object LikeActionViewSetUpCustomLikesAnimationFingerprint : Fingerprint(
+    name = "setUpCustomLikesAnimation",
     definingClass = "Lcom/instagram/ui/mediaactions/LikeActionView;",
 )
 
@@ -46,18 +46,24 @@ val changeLikeAnimationPatch =
         dependsOn(settingsPatch)
 
         execute {
-            LikeActionViewInitAnimationFingerprint.method.apply {
+            XDTUserActivationMetadataImplInitFingerprint.method.apply {
+                val animationEnumClassType = parameters[0].type
+                ChangeLikeAnimationExtensionFingerprint.changeFirstString(classNameToExtension(animationEnumClassType))
+
                 addInstructionsWithLabels(
                     0,
                     """
-                    invoke-static {p2}, $EXTENSION_CLASS_DESCRIPTOR->changeLikeAnimation(Ljava/lang/Object;)Ljava/lang/Object;
+                    sget-object p2, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+                    invoke-static {p1}, $EXTENSION_CLASS_DESCRIPTOR->changeLikeAnimation(Ljava/lang/Object;)Ljava/lang/Object;
                     move-result-object v0
                     if-eqz v0, :piko
-                    check-cast v0, ${LikeActionViewInitAnimationFingerprint.method.parameters[1].type}
-                    move-object/from16 p2, v0
+                    sget-object p2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+                    check-cast v0, $animationEnumClassType
+                    move-object/from16 p1, v0
                     """.trimIndent(),
                     ExternalLabel("piko", getInstruction(0)),
                 )
+                enableSettings("changeLikeAnimation")
             }
         }
 
@@ -76,13 +82,5 @@ val changeLikeAnimationPatch =
                     ExternalLabel("piko_continue_like_animation", getInstruction(19)),
                 )
             }
-        }
-
-        finalize {
-            val animationEnumClassType = LikeActionViewSetUpCustomLikesAnimationFingerprint.method.parameters[0].type
-            ChangeLikeAnimationExtensionFingerprint.changeFirstString(
-                classNameToExtension(animationEnumClassType)
-            )
-            enableSettings("changeLikeAnimation")
         }
     }
