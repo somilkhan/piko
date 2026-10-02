@@ -45,11 +45,9 @@ val changeLikeAnimationPatch =
         compatibleWith(COMPATIBILITY_INSTAGRAM)
         dependsOn(settingsPatch)
 
-        var animationEnumClassType: String? = null
-
         execute {
             XDTUserActivationMetadataImplInitFingerprint.method.apply {
-                animationEnumClassType = parameters[0].type
+                val animationEnumClassType = parameters[0].type
 
                 addInstructionsWithLabels(
                     0,
@@ -86,10 +84,9 @@ val changeLikeAnimationPatch =
         }
 
         finalize {
-            val resolvedAnimationEnumClassType = animationEnumClassType
-                ?: error("Like animation enum type was not resolved")
+            val animationEnumClassType = XDTUserActivationMetadataImplInitFingerprint.method.parameters[0].type
             ChangeLikeAnimationExtensionFingerprint.changeFirstString(
-                classNameToExtension(resolvedAnimationEnumClassType)
+                classNameToExtension(animationEnumClassType)
             )
             enableSettings("changeLikeAnimation")
         }
