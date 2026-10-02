@@ -44,11 +44,12 @@ val changeLikeAnimationPatch =
     ) {
         compatibleWith(COMPATIBILITY_INSTAGRAM)
         dependsOn(settingsPatch)
-        execute {
 
+        var animationEnumClassType: String? = null
+
+        execute {
             XDTUserActivationMetadataImplInitFingerprint.method.apply {
-                val animationEnumClassType = parameters[0].type
-                ChangeLikeAnimationExtensionFingerprint.changeFirstString(classNameToExtension(animationEnumClassType))
+                animationEnumClassType = parameters[0].type
 
                 addInstructionsWithLabels(
                     0,
@@ -63,25 +64,33 @@ val changeLikeAnimationPatch =
                     """.trimIndent(),
                     ExternalLabel("piko", getInstruction(0)),
                 )
-                enableSettings("changeLikeAnimation")
             }
         }
 
-    execute {
-        LikeActionViewSetUpCustomLikesAnimationFingerprint.method.apply {
-            addInstructionsWithLabels(
-                0,
-                """
-                invoke-static {p0}, $EXTENSION_CLASS_DESCRIPTOR->createCustomLikeAnimationDrawable(Ljava/lang/Object;)Landroid/graphics/drawable/Drawable;
-                move-result-object v0
-                if-eqz v0, :piko_original_like_animation
-                iget-object v1, p0, Lcom/instagram/ui/mediaactions/LikeActionView;->A00:LX/06GF;
-                invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-                goto :piko_continue_like_animation
-                """.trimIndent(),
-                ExternalLabel("piko_original_like_animation", getInstruction(0)),
-                ExternalLabel("piko_continue_like_animation", getInstruction(9)),
+        execute {
+            LikeActionViewSetUpCustomLikesAnimationFingerprint.method.apply {
+                addInstructionsWithLabels(
+                    0,
+                    """
+                    invoke-static {p0}, $EXTENSION_CLASS_DESCRIPTOR->createCustomLikeAnimationDrawable(Ljava/lang/Object;)Landroid/graphics/drawable/Drawable;
+                    move-result-object v0
+                    if-eqz v0, :piko_original_like_animation
+                    iget-object v1, p0, Lcom/instagram/ui/mediaactions/LikeActionView;->A00:LX/06GF;
+                    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+                    goto :piko_continue_like_animation
+                    """.trimIndent(),
+                    ExternalLabel("piko_original_like_animation", getInstruction(0)),
+                    ExternalLabel("piko_continue_like_animation", getInstruction(9)),
+                )
+            }
+        }
+
+        finalize {
+            val resolvedAnimationEnumClassType = animationEnumClassType
+                ?: error("Like animation enum type was not resolved")
+            ChangeLikeAnimationExtensionFingerprint.changeFirstString(
+                classNameToExtension(resolvedAnimationEnumClassType)
             )
+            enableSettings("changeLikeAnimation")
         }
     }
-}
