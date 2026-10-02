@@ -6,7 +6,7 @@
 
 package app.crimera.patches.instagram.misc.changeLikeAnimation
 
-import app.crimera.patches.instagram.misc.extension.hooks.instagramInitHook
+import app.crimera.patches.instagram.misc.settings.SettingsStatusLoadFingerprint
 import app.crimera.patches.instagram.misc.settings.settingsPatch
 import app.crimera.patches.instagram.utils.Constants.COMPATIBILITY_INSTAGRAM
 import app.crimera.patches.instagram.utils.Constants.PATCHES_DESCRIPTOR
@@ -18,10 +18,8 @@ import app.morphe.patcher.Fingerprint
 import app.morphe.patcher.extensions.InstructionExtensions.addInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructionsWithLabels
 import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
-import app.morphe.patcher.extensions.InstructionExtensions.instructions
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.util.smali.ExternalLabel
-import com.android.tools.smali.dexlib2.Opcode
 
 private const val EXTENSION_CLASS_DESCRIPTOR = "$PATCHES_DESCRIPTOR/feed/ChangeLikeAnimationPatch;"
 
@@ -72,23 +70,13 @@ val changeLikeAnimationPatch =
                 )
             }
 
-            // Enable this setting through the same startup method that executes
-            // SettingsStatus.load(). The shared SettingsStatus-load fingerprint
-            // is mutable across dependent patches; anchoring here avoids losing
-            // this one feature's registration while preserving patch isolation.
-            instagramInitHook.fingerprint.method.apply {
-                val loadIndex = instructions.indexOfFirst {
-                    it.opcode == Opcode.INVOKE_STATIC &&
-                        it.toString() == SSTS_DESCRIPTOR.format("load")
-                }
-                check(loadIndex >= 0) {
-                    "SettingsStatus.load() anchor not found for changeLikeAnimation"
-                }
-                addInstruction(
-                    loadIndex,
-                    SSTS_DESCRIPTOR.format("changeLikeAnimation"),
-                )
-            }
+            // This flag controls whether the setting is exposed in Piko Settings.
+            // Register it directly in SettingsStatus.load() instead of relying on
+            // Instagram startup-hook ordering.
+            SettingsStatusLoadFingerprint.method.addInstruction(
+                0,
+                SSTS_DESCRIPTOR.format("changeLikeAnimation"),
+            )
         }
 
         execute {
