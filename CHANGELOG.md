@@ -1,3 +1,9 @@
+## [3.10.1-dev.15](https://github.com/somilkhan/piko/compare/v3.10.1-dev.14...v3.10.1-dev.15) (2026-10-02)
+
+### 🐛 Bug Fixes
+
+* **instagram:** tolerate changed profile action bar iterator sequence ([e37d9eb](https://github.com/somilkhan/piko/commit/e37d9ebecce7c969dc430a7c341ac5bb9fe56de1))
+
 ## [3.10.1-dev.14](https://github.com/somilkhan/piko/compare/v3.10.1-dev.13...v3.10.1-dev.14) (2026-10-02)
 
 ### 🐛 Bug Fixes
