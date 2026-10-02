@@ -43,6 +43,11 @@ internal object LikeActionViewSetUpCustomLikesAnimationFingerprint : Fingerprint
     definingClass = LIKE_VIEW,
 )
 
+internal object MapAnimationExtensionFingerprint : Fingerprint(
+    name = "mapAnimation",
+    definingClass = EXTENSION_CLASS_DESCRIPTOR,
+)
+
 internal object XDTUserActivationMetadataImplInitFingerprint : Fingerprint(
     name = "<init>",
     definingClass = "Lcom/instagram/api/schemas/XDTUserActivationMetadataImpl;",
@@ -88,7 +93,7 @@ private fun installAnimationRendering(animationType: String) {
         """.trimIndent(),
     )
 
-    ChangeLikeAnimationExtensionFingerprint.method.addInstructions(
+    MapAnimationExtensionFingerprint.method.addInstructions(
         0,
         """
         check-cast p0, $animationType
