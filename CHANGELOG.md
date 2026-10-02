@@ -1,3 +1,9 @@
+## [3.10.1-dev.17](https://github.com/somilkhan/piko/compare/v3.10.1-dev.16...v3.10.1-dev.17) (2026-10-02)
+
+### 🐛 Bug Fixes
+
+* **instagram:** finalize custom like extension mutations ([21a347b](https://github.com/somilkhan/piko/commit/21a347bbb6e01e3dfe42b359921e0986fc836e39))
+
 ## [3.10.1-dev.16](https://github.com/somilkhan/piko/compare/v3.10.1-dev.15...v3.10.1-dev.16) (2026-10-02)
 
 ### 🐛 Bug Fixes
