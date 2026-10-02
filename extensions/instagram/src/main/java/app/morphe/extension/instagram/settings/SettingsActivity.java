@@ -55,6 +55,9 @@ public class SettingsActivity extends Activity {
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
 
+        // Refresh patch capability flags before the settings fragment reads them.
+        SettingsStatus.load();
+
         String displayTitle = null;
         String fragmentName = null;
 
