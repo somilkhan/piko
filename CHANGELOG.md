@@ -1,3 +1,10 @@
+## [3.10.1-dev.20](https://github.com/somilkhan/piko/compare/v3.10.1-dev.19...v3.10.1-dev.20) (2026-10-02)
+
+### 🐛 Bug Fixes
+
+* **instagram:** hook 439 like animation enum at LikeActionView ([dc96a97](https://github.com/somilkhan/piko/commit/dc96a97af775d683322e2edf07b5e06adc174abc))
+* **instagram:** restore upstream like animation path ([fbdca2d](https://github.com/somilkhan/piko/commit/fbdca2d3de186a5cbf9fd2cc642e415603852303))
+
 ## [3.10.1-dev.19](https://github.com/somilkhan/piko/compare/v3.10.1-dev.18...v3.10.1-dev.19) (2026-10-02)
 
 ### 🐛 Bug Fixes
