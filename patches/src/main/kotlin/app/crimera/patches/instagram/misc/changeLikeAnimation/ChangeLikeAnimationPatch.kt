@@ -78,12 +78,6 @@ private fun installAnimationRendering(animationType: String) {
     ).matchAll(0..Int.MAX_VALUE).singleOrNull()?.method
         ?: throw PatchException("Expected one like animation view configuration method")
 
-    if (configure.instructions.none {
-            it.getReference<MethodReference>()?.toString() == setup.toString()
-        }) {
-        throw PatchException("Like animation view configuration does not call custom animation setup")
-    }
-
     configure.addInstructions(
         0,
         """
