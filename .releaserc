@@ -41,11 +41,11 @@
         }
       }
     ],
-    "gradle-semantic-release-plugin",
     [
       "@semantic-release/exec",
       {
-        "prepareCmd": "./gradlew generatePatchesList \
+        "prepareCmd": "python3 -c \'from pathlib import Path; p=Path("gradle.properties"); s=p.read_text(); import re; p.write_text(re.sub(r"^version\\s*=.*$", "version = ${nextRelease.version}", s, flags=re.M))\' \
+          && ./gradlew generatePatchesList \
           && jq '.version=\"${nextRelease.version}\"' patches-list.json > patches-list.json.tmp && mv patches-list.json.tmp patches-list.json \
           && python3 .github/scripts/generate_patches_readme.py $GITHUB_REPOSITORY $GITHUB_REF_NAME patches-list.json README.md"
       }
