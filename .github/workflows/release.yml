@@ -40,6 +40,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      # Keep dev push releases active so Morphe can consume prerelease MPPs.
       - name: Release
         uses: cycjimmy/semantic-release-action@v5
         id: release
