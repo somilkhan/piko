@@ -18,34 +18,44 @@
         ]
       }
     ],
-     [
-            "@semantic-release/release-notes-generator", {
-            "preset": "conventionalcommits",
-            "presetConfig": {
-                "types": [
-                    { "type": "fix", "section": "🐛 Bug Fixes", "hidden": false },
-                    { "type": "feat", "section": "✨ New Features", "hidden": false },
-                    { "type": "bump", "section": "🚀 Updated App Support", "hidden": false },
-                    { "type": "perf", "section": "🔧 Improvements",  "hidden": false },
-                    { "type": "build", "hidden": true }
-                ]
-            }
-            }
-        ],
+    [
+      "@semantic-release/release-notes-generator", {
+        "preset": "conventionalcommits",
+        "presetConfig": {
+          "types": [
+            { "type": "fix", "section": "🐛 Bug Fixes", "hidden": false },
+            { "type": "feat", "section": "✨ New Features", "hidden": false },
+            { "type": "bump", "section": "🚀 Updated App Support", "hidden": false },
+            { "type": "perf", "section": "🔧 Improvements", "hidden": false },
+            { "type": "build", "hidden": true }
+          ]
+        }
+      }
+    ],
     [
       "@MorpheApp/changelog", {
         "releaseJson": {
           "path": "patches-bundle.json",
           "downloadUrlTemplate": "https://github.com/${owner}/${repo}/releases/download/v${version}/patches-${version}.mpp",
-          "signatureUrlTemplate": "https://github.com/${owner}/${repo}/releases/download/v${version}/patches-${version}.mpp.asc"
+          "signatureUrlTemplate": ""
         }
       }
     ],
     "gradle-semantic-release-plugin",
     [
-      "@semantic-release/git", {
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "./gradlew generatePatchesList \
+          && jq '.version=\"${nextRelease.version}\"' patches-list.json > patches-list.json.tmp && mv patches-list.json.tmp patches-list.json \
+          && python3 .github/scripts/generate_patches_readme.py $GITHUB_REPOSITORY $GITHUB_REF_NAME patches-list.json README.md"
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
         "assets": [
           "CHANGELOG.md",
+          "gradle.properties",
           "patches-bundle.json",
           "patches-list.json",
           "README.md"
@@ -65,11 +75,10 @@
       }
     ],
     [
-      "@semantic-release/exec",
+      "@cleyrop-org/semantic-release-backmerge",
       {
-        "prepareCmd": "./gradlew generatePatchesList \
-          && jq '.version=\"${nextRelease.version}\"' patches-list.json > patches-list.json.tmp && mv patches-list.json.tmp patches-list.json \
-          && python3 .github/scripts/generate_patches_readme.py $GITHUB_REPOSITORY $GITHUB_REF_NAME patches-list.json README.md"
+        "backmergeBranches": [{"from": "main", "to": "dev"}],
+        "clearWorkspace": true
       }
     ]
   ]

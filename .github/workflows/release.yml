@@ -3,9 +3,6 @@ name: Release
 on:
   workflow_dispatch:
   push:
-    branches:
-      - main
-      - dev
 
 jobs:
   release:
@@ -22,52 +19,40 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Sync release branch
-        run: |
-          git fetch origin dev --tags --force
-          git checkout -B dev origin/dev
-          git reset --hard origin/dev
-
       - name: Setup Java
-        uses: actions/setup-java@v6.0.0
+        uses: actions/setup-java@v6
         with:
           distribution: 'temurin'
-          java-version: '17'
-
-      - name: Cache Gradle
-        uses: burrunan/gradle-cache-action@v3
+          java-version: '21'
 
       - name: Setup Node.js
         uses: actions/setup-node@v7
         with:
           node-version: 'lts/*'
-          cache: npm
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm install
 
-      # v3.10.0-dev.3 was created by an earlier failed release attempt.
-      # It has no GitHub Release, so semantic-release cannot create the tag again.
-      - name: Remove stale dev.3 tag
-        run: |
-          stale_tag="v3.10.0-dev.3"
-          if git rev-parse -q --verify "refs/tags/$stale_tag" >/dev/null 2>&1; then
-            if ! gh release view "$stale_tag" >/dev/null 2>&1; then
-              git push origin ":refs/tags/$stale_tag"
-            fi
-          fi
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+      # Semantic release runs its own Gradle build command.
+      # Only dev and main branch will generate a release as specified by .releaserc
       - name: Release
-        uses: cycjimmy/semantic-release-action@v5
+        uses: cycjimmy/semantic-release-action@v6
         id: release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Attest
         if: steps.release.outputs.new_release_published == 'true'
-        uses: actions/attest-build-provenance@v3
+        uses: actions/attest-build-provenance@v4
         with:
           subject-name: 'Piko Patches ${{ steps.release.outputs.new_release_git_tag }}'
           subject-path: patches/build/libs/patches-*.mpp
+
+      # Always verify compilation when semantic-release did not publish a release.
+      # This covers non-main/dev branches, chore commits, docs commits, etc.
+      - name: Verify project compiles
+        if: steps.release.outputs.new_release_published != 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: ./gradlew :patches:buildAndroid clean --no-daemon
