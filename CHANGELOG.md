@@ -1,3 +1,9 @@
+## [3.10.1-dev.25](https://github.com/somilkhan/piko/compare/v3.10.1-dev.24...v3.10.1-dev.25) (2026-10-03)
+
+### 🐛 Bug Fixes
+
+* **ci:** build Android dex bundle for Morphe Manager ([9198649](https://github.com/somilkhan/piko/commit/919864900d73f9952110193e57af56b35324b4f0))
+
 ## [3.10.1-dev.24](https://github.com/somilkhan/piko/compare/v3.10.1-dev.23...v3.10.1-dev.24) (2026-10-03)
 
 ### 🐛 Bug Fixes
