@@ -862,6 +862,7 @@ public class ScreenBuilder {
     }
 
     public void aboutSection(TreeMap<String, Boolean> flags) {
+        SettingsStatus.load();
 
         String appVersionText = String.format(str("piko_app_version"), Utils.getAppVersionName());
         String patchVersionText = String.format(str("piko_patch_version"), Utils.getPatchesReleaseVersion());
