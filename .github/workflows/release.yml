@@ -40,6 +40,19 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      # v3.10.0-dev.3 was created by an earlier failed release attempt.
+      # It has no GitHub Release, so semantic-release cannot create the tag again.
+      - name: Remove stale dev.3 tag
+        run: |
+          stale_tag="v3.10.0-dev.3"
+          if git rev-parse -q --verify "refs/tags/$stale_tag" >/dev/null 2>&1; then
+            if ! gh release view "$stale_tag" >/dev/null 2>&1; then
+              git push origin ":refs/tags/$stale_tag"
+            fi
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       # Keep dev push releases active so Morphe can consume prerelease MPPs.
       - name: Release
         uses: cycjimmy/semantic-release-action@v5
