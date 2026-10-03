@@ -1,3 +1,9 @@
+## [3.10.1-dev.26](https://github.com/somilkhan/piko/compare/v3.10.1-dev.25...v3.10.1-dev.26) (2026-10-03)
+
+### 🐛 Bug Fixes
+
+* **instagram:** register patch status after status map load ([9ac002c](https://github.com/somilkhan/piko/commit/9ac002cc5d506f6cbd57cc74acac14d2f9ee094a))
+
 ## [3.10.1-dev.25](https://github.com/somilkhan/piko/compare/v3.10.1-dev.24...v3.10.1-dev.25) (2026-10-03)
 
 ### 🐛 Bug Fixes
