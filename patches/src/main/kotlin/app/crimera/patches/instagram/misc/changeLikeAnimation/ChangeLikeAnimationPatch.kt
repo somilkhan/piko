@@ -6,14 +6,13 @@
 
 package app.crimera.patches.instagram.misc.changeLikeAnimation
 
-import app.crimera.patches.instagram.misc.extension.hooks.instagramInitHook
 import app.crimera.patches.instagram.misc.settings.settingsPatch
 import app.crimera.patches.instagram.utils.Constants.COMPATIBILITY_INSTAGRAM
 import app.crimera.patches.instagram.utils.Constants.PATCHES_DESCRIPTOR
+import app.crimera.patches.instagram.utils.enableSettings
 import app.crimera.utils.changeFirstString
 import app.crimera.utils.classNameToExtension
 import app.morphe.patcher.Fingerprint
-import app.morphe.patcher.extensions.InstructionExtensions.addInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructionsWithLabels
 import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
 import app.morphe.patcher.patch.PatchException
@@ -63,10 +62,7 @@ val changeLikeAnimationPatch =
                     """.trimIndent(),
                     ExternalLabel("piko", getInstruction(0)),
                 )
-                instagramInitHook.fingerprint.method.addInstruction(
-                    0,
-                    "invoke-static {}, Lapp/morphe/extension/instagram/settings/SettingsStatus;->changeLikeAnimation()V",
-                )
+                enableSettings("changeLikeAnimation")
             }
         }
 

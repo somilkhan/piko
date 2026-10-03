@@ -1,3 +1,9 @@
+## [3.10.1-dev.23](https://github.com/somilkhan/piko/compare/v3.10.1-dev.22...v3.10.1-dev.23) (2026-10-03)
+
+### 🐛 Bug Fixes
+
+* **instagram:** register like animation status from patch init hook ([797878d](https://github.com/somilkhan/piko/commit/797878d2bd0070f8bc07540425707a6c0e22657c))
+
 ## [3.10.1-dev.22](https://github.com/somilkhan/piko/compare/v3.10.1-dev.21...v3.10.1-dev.22) (2026-10-03)
 
 ### 🐛 Bug Fixes

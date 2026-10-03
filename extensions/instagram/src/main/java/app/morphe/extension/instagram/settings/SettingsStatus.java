@@ -143,7 +143,10 @@ public class SettingsStatus {
     public static boolean unlockPlusBenefits = false;
     public static void unlockPlusBenefits() { unlockPlusBenefits = true; }
     public static boolean changeLikeAnimation = false;
-    public static void changeLikeAnimation() { changeLikeAnimation = true; }
+    public static void changeLikeAnimation() {
+        changeLikeAnimation = true;
+        FLAGS.put(str("piko_change_like_animation"), true);
+    }
     public static boolean customiseStoryRingSize = false;
     public static void customiseStoryRingSize() { customiseStoryRingSize = true; }
     public static boolean disableAnalytics = false;
