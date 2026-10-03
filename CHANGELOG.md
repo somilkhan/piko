@@ -1,3 +1,9 @@
+## [3.10.1-dev.27](https://github.com/somilkhan/piko/compare/v3.10.1-dev.26...v3.10.1-dev.27) (2026-10-03)
+
+### 🐛 Bug Fixes
+
+* **instagram:** make custom like animation patch verifier-safe ([13e1465](https://github.com/somilkhan/piko/commit/13e146556c0067f27bc64c3d732aca4ea73fa68a))
+
 ## [3.10.1-dev.26](https://github.com/somilkhan/piko/compare/v3.10.1-dev.25...v3.10.1-dev.26) (2026-10-03)
 
 ### 🐛 Bug Fixes

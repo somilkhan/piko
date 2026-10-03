@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-10-03T16:00:37",
-  "description": "## [3.10.1-dev.26](https://github.com/somilkhan/piko/compare/v3.10.1-dev.25...v3.10.1-dev.26) (2026-10-03)\n\n### 🐛 Bug Fixes\n\n* **instagram:** register patch status after status map load ([9ac002c](https://github.com/somilkhan/piko/commit/9ac002cc5d506f6cbd57cc74acac14d2f9ee094a))",
-  "download_url": "https://github.com/somilkhan/piko/releases/download/v3.10.1-dev.26/patches-3.10.1-dev.26.mpp",
+  "created_at": "2026-10-03T16:08:04",
+  "description": "## [3.10.1-dev.27](https://github.com/somilkhan/piko/compare/v3.10.1-dev.26...v3.10.1-dev.27) (2026-10-03)\n\n### 🐛 Bug Fixes\n\n* **instagram:** make custom like animation patch verifier-safe ([13e1465](https://github.com/somilkhan/piko/commit/13e146556c0067f27bc64c3d732aca4ea73fa68a))",
+  "download_url": "https://github.com/somilkhan/piko/releases/download/v3.10.1-dev.27/patches-3.10.1-dev.27.mpp",
   "signature_download_url": "",
-  "version": "3.10.1-dev.26"
+  "version": "3.10.1-dev.27"
 }
