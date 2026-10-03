@@ -2,6 +2,18 @@
 
 ### 🐛 Bug Fixes
 
+* **ci:** configure semantic-release dev prerelease channel ([4e5394e](https://github.com/somilkhan/piko/commit/4e5394e8c5ffc2e3186acb639f48993ee4614c75))
+* **ci:** correct prerelease version preparation ([7132fa4](https://github.com/somilkhan/piko/commit/7132fa486c95a5b17411571930599a72c3a9bed2))
+* **ci:** correctly update prerelease Gradle version ([78e257d](https://github.com/somilkhan/piko/commit/78e257da7870bead31f3646b424c9937fe06f418))
+* **ci:** make semantic-release own prerelease versioning ([324f964](https://github.com/somilkhan/piko/commit/324f9646e5b08473a8072a9a2792e1d0bcc6aa96))
+* **instagram:** make like animation status authoritative ([8d91d74](https://github.com/somilkhan/piko/commit/8d91d749d281a78c468ef3713e00a076e500b5d2))
+* **instagram:** register like animation status from patch init hook ([797878d](https://github.com/somilkhan/piko/commit/797878d2bd0070f8bc07540425707a6c0e22657c))
+* **instagram:** reliably register like animation patch status ([99237dd](https://github.com/somilkhan/piko/commit/99237dda0131f450294bd6f55257199bc49f5211))
+
+## [3.10.1-dev.23](https://github.com/somilkhan/piko/compare/v3.10.1-dev.22...v3.10.1-dev.23) (2026-10-03)
+
+### 🐛 Bug Fixes
+
 * **ci:** correct prerelease version preparation ([7132fa4](https://github.com/somilkhan/piko/commit/7132fa486c95a5b17411571930599a72c3a9bed2))
 * **ci:** correctly update prerelease Gradle version ([78e257d](https://github.com/somilkhan/piko/commit/78e257da7870bead31f3646b424c9937fe06f418))
 * **ci:** make semantic-release own prerelease versioning ([324f964](https://github.com/somilkhan/piko/commit/324f9646e5b08473a8072a9a2792e1d0bcc6aa96))
