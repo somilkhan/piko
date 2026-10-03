@@ -1,3 +1,26 @@
+## [3.10.1-dev.21](https://github.com/somilkhan/piko/compare/v3.10.1-dev.20...v3.10.1-dev.21) (2026-10-03)
+
+### 🐛 Bug Fixes
+
+* **ci:** allow dev prerelease publishing without GPG ([9b0dd74](https://github.com/somilkhan/piko/commit/9b0dd7470d4a42c02facc4fad56fe2ab128628e1))
+* **ci:** clear stale dev prerelease tag before release ([78f70e2](https://github.com/somilkhan/piko/commit/78f70e2a11df50f63054ac71cc3718ddb7297b65))
+* **ci:** clear stale dev.2 tag collision ([c18cd81](https://github.com/somilkhan/piko/commit/c18cd813b81ffa20a2a2ca04898b752dc43c9732))
+* **ci:** commit generated prerelease metadata ([975afba](https://github.com/somilkhan/piko/commit/975afba06c7f3c3a1a0897ce67394381a265d95d))
+* **ci:** correct semantic release configuration ([b3ff181](https://github.com/somilkhan/piko/commit/b3ff1812dd6dc8285765d6bc7c0a3dc1bec82d03))
+* **ci:** fetch full git history for dev prereleases ([8a19977](https://github.com/somilkhan/piko/commit/8a1997728de8c65d7fc48e5ce6e0f80764dd63e3))
+* **ci:** grant release workflow tag push permission ([8a9cd96](https://github.com/somilkhan/piko/commit/8a9cd965ad814fbcd66b3513dee26fa10242a9ba))
+* **ci:** publish dev MPP pre-releases ([812a3dd](https://github.com/somilkhan/piko/commit/812a3dd57e069fbaeb9ef1163ba67d56c936a4db))
+* **ci:** publish releases without git push plugin ([169cd57](https://github.com/somilkhan/piko/commit/169cd57101297d4ffa07e65858d1832f9189f1aa))
+* **ci:** release current dev prerelease ([f25419a](https://github.com/somilkhan/piko/commit/f25419a5cbfb5d8d5d7934263b729dcaf57c63cb))
+* **ci:** remove stale dev.3 tag before prerelease ([4e4ce60](https://github.com/somilkhan/piko/commit/4e4ce606ce0489ad0d92b3d4cbfeab0a843485b5))
+* **ci:** repair prerelease release configuration ([78db7e3](https://github.com/somilkhan/piko/commit/78db7e3c5953f005c0f8176ed5de892d54cfb899))
+* **ci:** restore discoverable dev prereleases ([85323ec](https://github.com/somilkhan/piko/commit/85323ece98a22613e98185fc5db5234c26710f8c))
+* **ci:** restore GitHub MPP release publishing ([1d3d648](https://github.com/somilkhan/piko/commit/1d3d648641667289e9c1ae7e1df84ce906a33333))
+* **ci:** restore valid release workflow permissions ([264d38a](https://github.com/somilkhan/piko/commit/264d38ac000d875dd9f64ecac6713ee0714d6304))
+* **ci:** stop deleting active prerelease tags ([7455fc4](https://github.com/somilkhan/piko/commit/7455fc463239e6174181e1dcb1a562847bd6e1fb))
+* **ci:** sync dev before prerelease publishing ([3da5bda](https://github.com/somilkhan/piko/commit/3da5bda6747155111cdd5a34ca495b7f15ba1f0e))
+* **instagram:** use LikeActionView as custom animation target ([f7e7e3d](https://github.com/somilkhan/piko/commit/f7e7e3d4529deb9d1df055f434e0e99b43016096))
+
 ## [3.10.0-dev.3](https://github.com/somilkhan/piko/compare/v3.10.0-dev.2...v3.10.0-dev.3) (2026-10-03)
 
 ### 🐛 Bug Fixes
