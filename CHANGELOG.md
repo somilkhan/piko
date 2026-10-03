@@ -3,6 +3,14 @@
 ### 🐛 Bug Fixes
 
 * **ci:** commit generated prerelease metadata ([975afba](https://github.com/somilkhan/piko/commit/975afba06c7f3c3a1a0897ce67394381a265d95d))
+* **ci:** remove stale dev.3 tag before prerelease ([4e4ce60](https://github.com/somilkhan/piko/commit/4e4ce606ce0489ad0d92b3d4cbfeab0a843485b5))
+* **ci:** repair prerelease release configuration ([78db7e3](https://github.com/somilkhan/piko/commit/78db7e3c5953f005c0f8176ed5de892d54cfb899))
+
+## [3.10.0-dev.3](https://github.com/somilkhan/piko/compare/v3.10.0-dev.2...v3.10.0-dev.3) (2026-10-03)
+
+### 🐛 Bug Fixes
+
+* **ci:** commit generated prerelease metadata ([975afba](https://github.com/somilkhan/piko/commit/975afba06c7f3c3a1a0897ce67394381a265d95d))
 * **ci:** repair prerelease release configuration ([78db7e3](https://github.com/somilkhan/piko/commit/78db7e3c5953f005c0f8176ed5de892d54cfb899))
 
 ## [3.10.0-dev.3](https://github.com/somilkhan/piko/compare/v3.10.0-dev.2...v3.10.0-dev.3) (2026-10-03)

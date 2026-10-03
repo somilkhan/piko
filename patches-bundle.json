@@ -1,6 +1,6 @@
 {
-  "created_at": "2026-10-03T12:09:00",
-  "description": "## [3.10.0-dev.3](https://github.com/somilkhan/piko/compare/v3.10.0-dev.2...v3.10.0-dev.3) (2026-10-03)\n\n### 🐛 Bug Fixes\n\n* **ci:** commit generated prerelease metadata ([975afba](https://github.com/somilkhan/piko/commit/975afba06c7f3c3a1a0897ce67394381a265d95d))\n* **ci:** repair prerelease release configuration ([78db7e3](https://github.com/somilkhan/piko/commit/78db7e3c5953f005c0f8176ed5de892d54cfb899))",
+  "created_at": "2026-10-03T12:13:15",
+  "description": "## [3.10.0-dev.3](https://github.com/somilkhan/piko/compare/v3.10.0-dev.2...v3.10.0-dev.3) (2026-10-03)\n\n### 🐛 Bug Fixes\n\n* **ci:** commit generated prerelease metadata ([975afba](https://github.com/somilkhan/piko/commit/975afba06c7f3c3a1a0897ce67394381a265d95d))\n* **ci:** remove stale dev.3 tag before prerelease ([4e4ce60](https://github.com/somilkhan/piko/commit/4e4ce606ce0489ad0d92b3d4cbfeab0a843485b5))\n* **ci:** repair prerelease release configuration ([78db7e3](https://github.com/somilkhan/piko/commit/78db7e3c5953f005c0f8176ed5de892d54cfb899))",
   "download_url": "https://github.com/somilkhan/piko/releases/download/v3.10.0-dev.3/patches-3.10.0-dev.3.mpp",
   "signature_download_url": "https://github.com/somilkhan/piko/releases/download/v3.10.0-dev.3/patches-3.10.0-dev.3.mpp.asc",
   "version": "3.10.0-dev.3"
