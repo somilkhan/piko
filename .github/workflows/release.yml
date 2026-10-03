@@ -22,6 +22,12 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Sync release branch
+        run: |
+          git fetch origin dev --tags --force
+          git checkout -B dev origin/dev
+          git reset --hard origin/dev
+
       - name: Setup Java
         uses: actions/setup-java@v6.0.0
         with:
@@ -35,7 +41,7 @@ jobs:
         uses: actions/setup-node@v7
         with:
           node-version: 'lts/*'
-          cache: 'npm'
+          cache: npm
 
       - name: Install dependencies
         run: npm install
@@ -53,7 +59,6 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Keep dev push releases active so Morphe can consume prerelease MPPs.
       - name: Release
         uses: cycjimmy/semantic-release-action@v5
         id: release
