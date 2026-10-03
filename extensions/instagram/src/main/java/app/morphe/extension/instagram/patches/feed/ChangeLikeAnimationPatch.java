@@ -10,6 +10,8 @@ package app.morphe.extension.instagram.patches.feed;
 import app.morphe.extension.instagram.entity.Entity;
 import android.graphics.drawable.Drawable;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import app.morphe.extension.instagram.utils.Pref;
 import app.morphe.extension.shared.Logger;
@@ -52,15 +54,41 @@ public class ChangeLikeAnimationPatch {
         return defaultAnimation;
     }
 
-    public static Drawable createCustomLikeAnimationDrawable(Object view) {
-        if (!(view instanceof View)) return null;
+    /**
+     * Applies an imported animation after Instagram has completed its native
+     * LikeActionView setup. This intentionally does not assume that the hooked
+     * object itself is an ImageView.
+     */
+    public static void applyCustomLikeAnimation(Object view) {
+        if (!(view instanceof View)) return;
+
         try {
-            return CustomLikeAnimationStore.createDrawableForCurrentSelection(
+            Drawable drawable = CustomLikeAnimationStore.createDrawableForCurrentSelection(
                     ((View) view).getContext()
             );
-        } catch (Exception ignored) {
-            return null;
+            if (drawable == null) return;
+
+            ImageView target = findImageView((View) view);
+            if (target != null) {
+                target.setImageDrawable(drawable);
+            }
+        } catch (Exception e) {
+            Logger.printException(() -> "custom like animation apply failed", e);
         }
     }
 
+    private static ImageView findImageView(View view) {
+        if (view instanceof ImageView) {
+            return (ImageView) view;
+        }
+
+        if (!(view instanceof ViewGroup)) return null;
+
+        ViewGroup group = (ViewGroup) view;
+        for (int i = 0; i < group.getChildCount(); i++) {
+            ImageView target = findImageView(group.getChildAt(i));
+            if (target != null) return target;
+        }
+        return null;
+    }
 }
