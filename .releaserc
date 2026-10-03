@@ -3,51 +3,86 @@
     "main",
     {
       "name": "dev",
-      "prerelease": true
+      "prerelease": "dev"
     }
   ],
   "plugins": [
     [
-      "@semantic-release/commit-analyzer", {
+      "@semantic-release/commit-analyzer",
+      {
         "releaseRules": [
-          { "type": "fix", "release": "patch" },
-          { "type": "feat", "release": "minor" },
-          { "type": "bump", "release": "patch" },
-          { "type": "perf", "release": "patch" },
-          { "type": "build", "scope": "Needs bump", "release": "patch" }
+          {
+            "type": "fix",
+            "release": "patch"
+          },
+          {
+            "type": "feat",
+            "release": "minor"
+          },
+          {
+            "type": "bump",
+            "release": "patch"
+          },
+          {
+            "type": "perf",
+            "release": "patch"
+          },
+          {
+            "type": "build",
+            "scope": "Needs bump",
+            "release": "patch"
+          }
         ]
       }
     ],
-     [
-            "@semantic-release/release-notes-generator", {
-            "preset": "conventionalcommits",
-            "presetConfig": {
-                "types": [
-                    { "type": "fix", "section": "🐛 Bug Fixes", "hidden": false },
-                    { "type": "feat", "section": "✨ New Features", "hidden": false },
-                    { "type": "bump", "section": "🚀 Updated App Support", "hidden": false },
-                    { "type": "perf", "section": "🔧 Improvements",  "hidden": false },
-                    { "type": "build", "hidden": true }
-                ]
-            }
-            }
-        ],
     [
-      "@MorpheApp/changelog", {
-        "releaseJson": {
-          "path": "patches-bundle.json",
-          "downloadUrlTemplate": "https://github.com/${owner}/${repo}/releases/download/v${version}/patches-${version}.mpp",
-          "signatureUrlTemplate": "https://github.com/${owner}/${repo}/releases/download/v${version}/patches-${version}.mpp.asc"
+      "@semantic-release/release-notes-generator",
+      {
+        "preset": "conventionalcommits",
+        "presetConfig": {
+          "types": [
+            {
+              "type": "fix",
+              "section": "🐛 Bug Fixes",
+              "hidden": false
+            },
+            {
+              "type": "feat",
+              "section": "✨ New Features",
+              "hidden": false
+            },
+            {
+              "type": "bump",
+              "section": "🚀 Updated App Support",
+              "hidden": false
+            },
+            {
+              "type": "perf",
+              "section": "🔧 Improvements",
+              "hidden": false
+            },
+            {
+              "type": "build",
+              "hidden": true
+            }
+          ]
         }
       }
     ],
-    "gradle-semantic-release-plugin",
+    [
+      "@MorpheApp/changelog",
+      {
+        "releaseJson": {
+          "path": "patches-bundle.json",
+          "downloadUrlTemplate": "https://github.com/${owner}/${repo}/releases/download/v${version}/patches-${version}.mpp",
+          "signatureUrlTemplate": ""
+        }
+      }
+    ],
     [
       "@semantic-release/exec",
       {
-        "prepareCmd": "./gradlew generatePatchesList \
-          && jq '.version=\"${nextRelease.version}\"' patches-list.json > patches-list.json.tmp && mv patches-list.json.tmp patches-list.json \
-          && python3 .github/scripts/generate_patches_readme.py $GITHUB_REPOSITORY $GITHUB_REF_NAME patches-list.json README.md"
+        "prepareCmd": "python3 -c 'from pathlib import Path; import re; p=Path(\"gradle.properties\"); s=p.read_text(); p.write_text(re.sub(r\"^version\\s*=.*$\", \"version = ${nextRelease.version}\", s, flags=re.M))' && ./gradlew generatePatchesList && jq '.version=\"${nextRelease.version}\"' patches-list.json > patches-list.json.tmp && mv patches-list.json.tmp patches-list.json && python3 .github/scripts/generate_patches_readme.py $GITHUB_REPOSITORY $GITHUB_REF_NAME patches-list.json README.md"
       }
     ],
     [
@@ -77,7 +112,12 @@
     [
       "@cleyrop-org/semantic-release-backmerge",
       {
-        "backmergeBranches": [{"from": "main", "to": "dev"}],
+        "backmergeBranches": [
+          {
+            "from": "main",
+            "to": "dev"
+          }
+        ],
         "clearWorkspace": true
       }
     ]

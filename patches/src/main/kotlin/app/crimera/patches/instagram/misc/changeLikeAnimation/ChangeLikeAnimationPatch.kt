@@ -14,20 +14,21 @@ import app.crimera.utils.changeFirstString
 import app.crimera.utils.classNameToExtension
 import app.morphe.patcher.Fingerprint
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructionsWithLabels
+import app.morphe.patcher.extensions.InstructionExtensions.addInstruction
+import app.morphe.patcher.extensions.InstructionExtensions.instructions
 import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
+import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.util.smali.ExternalLabel
+import app.morphe.util.indexOfFirstInstruction
+import com.android.tools.smali.dexlib2.Opcode
 
 private const val EXTENSION_CLASS_DESCRIPTOR = "$PATCHES_DESCRIPTOR/feed/ChangeLikeAnimationPatch;"
+private const val LIKE_ACTION_VIEW = "Lcom/instagram/ui/mediaactions/LikeActionView;"
 
 internal object ChangeLikeAnimationExtensionFingerprint : Fingerprint(
     name = "changeLikeAnimation",
     definingClass = EXTENSION_CLASS_DESCRIPTOR,
-)
-
-internal object LikeActionViewSetUpCustomLikesAnimationFingerprint : Fingerprint(
-    name = "setUpCustomLikesAnimation",
-    definingClass = "Lcom/instagram/ui/mediaactions/LikeActionView;",
 )
 
 internal object XDTUserActivationMetadataImplInitFingerprint : Fingerprint(
@@ -44,11 +45,17 @@ val changeLikeAnimationPatch =
     ) {
         compatibleWith(COMPATIBILITY_INSTAGRAM)
         dependsOn(settingsPatch)
-        execute {
 
+        execute {
+            enableSettings("changeLikeAnimation")
+        }
+
+        execute {
             XDTUserActivationMetadataImplInitFingerprint.method.apply {
                 val animationEnumClassType = parameters[0].type
-                ChangeLikeAnimationExtensionFingerprint.changeFirstString(classNameToExtension(animationEnumClassType))
+                ChangeLikeAnimationExtensionFingerprint.changeFirstString(
+                    classNameToExtension(animationEnumClassType)
+                )
 
                 addInstructionsWithLabels(
                     0,
@@ -63,25 +70,25 @@ val changeLikeAnimationPatch =
                     """.trimIndent(),
                     ExternalLabel("piko", getInstruction(0)),
                 )
-                enableSettings("changeLikeAnimation")
             }
         }
 
-    execute {
-        LikeActionViewSetUpCustomLikesAnimationFingerprint.method.apply {
-            addInstructionsWithLabels(
-                0,
-                """
-                invoke-static {p0}, $EXTENSION_CLASS_DESCRIPTOR->createCustomLikeAnimationDrawable(Ljava/lang/Object;)Landroid/graphics/drawable/Drawable;
-                move-result-object v0
-                if-eqz v0, :piko_original_like_animation
-                iget-object v1, p0, Lcom/instagram/ui/mediaactions/LikeActionView;->A00:LX/06GF;
-                invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-                goto :piko_continue_like_animation
-                """.trimIndent(),
-                ExternalLabel("piko_original_like_animation", getInstruction(0)),
-                ExternalLabel("piko_continue_like_animation", getInstruction(9)),
-            )
+        execute {
+            val setup = Fingerprint(
+                name = "setUpCustomLikesAnimation",
+                definingClass = LIKE_ACTION_VIEW,
+            ).matchAll(0..Int.MAX_VALUE).singleOrNull()?.method
+                ?: throw PatchException("Expected one custom like animation setup")
+
+            setup.apply {
+                // Let Instagram finish creating its native like-animation view first.
+                // The old implementation wrote through p0 as ImageView, but p0 is not
+                // guaranteed to be an ImageView and caused a verifier rejection.
+                val returnIndex = indexOfFirstInstruction(Opcode.RETURN_VOID)
+                addInstruction(
+                    returnIndex,
+                    "invoke-static {p0}, $EXTENSION_CLASS_DESCRIPTOR->applyCustomLikeAnimation(Ljava/lang/Object;)V",
+                )
+            }
         }
     }
-}

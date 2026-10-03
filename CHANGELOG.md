@@ -1,8 +1,163 @@
-## [3.10.0](https://github.com/somilkhan/piko/compare/v3.9.0...v3.10.0) (2026-09-30)
+## [3.10.1-dev.27](https://github.com/somilkhan/piko/compare/v3.10.1-dev.26...v3.10.1-dev.27) (2026-10-03)
 
 ### 🐛 Bug Fixes
 
+* **instagram:** make custom like animation patch verifier-safe ([13e1465](https://github.com/somilkhan/piko/commit/13e146556c0067f27bc64c3d732aca4ea73fa68a))
+
+## [3.10.1-dev.26](https://github.com/somilkhan/piko/compare/v3.10.1-dev.25...v3.10.1-dev.26) (2026-10-03)
+
+### 🐛 Bug Fixes
+
+* **instagram:** register patch status after status map load ([9ac002c](https://github.com/somilkhan/piko/commit/9ac002cc5d506f6cbd57cc74acac14d2f9ee094a))
+
+## [3.10.1-dev.25](https://github.com/somilkhan/piko/compare/v3.10.1-dev.24...v3.10.1-dev.25) (2026-10-03)
+
+### 🐛 Bug Fixes
+
+* **ci:** build Android dex bundle for Morphe Manager ([9198649](https://github.com/somilkhan/piko/commit/919864900d73f9952110193e57af56b35324b4f0))
+
+## [3.10.1-dev.24](https://github.com/somilkhan/piko/compare/v3.10.1-dev.23...v3.10.1-dev.24) (2026-10-03)
+
+### 🐛 Bug Fixes
+
+* **ci:** configure semantic-release dev prerelease channel ([4e5394e](https://github.com/somilkhan/piko/commit/4e5394e8c5ffc2e3186acb639f48993ee4614c75))
+* **ci:** correct prerelease version preparation ([7132fa4](https://github.com/somilkhan/piko/commit/7132fa486c95a5b17411571930599a72c3a9bed2))
+* **ci:** correctly update prerelease Gradle version ([78e257d](https://github.com/somilkhan/piko/commit/78e257da7870bead31f3646b424c9937fe06f418))
+* **ci:** make semantic-release own prerelease versioning ([324f964](https://github.com/somilkhan/piko/commit/324f9646e5b08473a8072a9a2792e1d0bcc6aa96))
+* **instagram:** make like animation status authoritative ([8d91d74](https://github.com/somilkhan/piko/commit/8d91d749d281a78c468ef3713e00a076e500b5d2))
+* **instagram:** reliably register like animation patch status ([99237dd](https://github.com/somilkhan/piko/commit/99237dda0131f450294bd6f55257199bc49f5211))
+
+## [3.10.1-dev.23](https://github.com/somilkhan/piko/compare/v3.10.1-dev.22...v3.10.1-dev.23) (2026-10-03)
+
+### 🐛 Bug Fixes
+
+* **ci:** configure semantic-release dev prerelease channel ([4e5394e](https://github.com/somilkhan/piko/commit/4e5394e8c5ffc2e3186acb639f48993ee4614c75))
+* **ci:** correct prerelease version preparation ([7132fa4](https://github.com/somilkhan/piko/commit/7132fa486c95a5b17411571930599a72c3a9bed2))
+* **ci:** correctly update prerelease Gradle version ([78e257d](https://github.com/somilkhan/piko/commit/78e257da7870bead31f3646b424c9937fe06f418))
+* **ci:** make semantic-release own prerelease versioning ([324f964](https://github.com/somilkhan/piko/commit/324f9646e5b08473a8072a9a2792e1d0bcc6aa96))
+* **instagram:** make like animation status authoritative ([8d91d74](https://github.com/somilkhan/piko/commit/8d91d749d281a78c468ef3713e00a076e500b5d2))
+* **instagram:** register like animation status from patch init hook ([797878d](https://github.com/somilkhan/piko/commit/797878d2bd0070f8bc07540425707a6c0e22657c))
+* **instagram:** reliably register like animation patch status ([99237dd](https://github.com/somilkhan/piko/commit/99237dda0131f450294bd6f55257199bc49f5211))
+
+## [3.10.1-dev.23](https://github.com/somilkhan/piko/compare/v3.10.1-dev.22...v3.10.1-dev.23) (2026-10-03)
+
+### 🐛 Bug Fixes
+
+* **ci:** correct prerelease version preparation ([7132fa4](https://github.com/somilkhan/piko/commit/7132fa486c95a5b17411571930599a72c3a9bed2))
+* **ci:** correctly update prerelease Gradle version ([78e257d](https://github.com/somilkhan/piko/commit/78e257da7870bead31f3646b424c9937fe06f418))
+* **ci:** make semantic-release own prerelease versioning ([324f964](https://github.com/somilkhan/piko/commit/324f9646e5b08473a8072a9a2792e1d0bcc6aa96))
+* **instagram:** make like animation status authoritative ([8d91d74](https://github.com/somilkhan/piko/commit/8d91d749d281a78c468ef3713e00a076e500b5d2))
+* **instagram:** register like animation status from patch init hook ([797878d](https://github.com/somilkhan/piko/commit/797878d2bd0070f8bc07540425707a6c0e22657c))
+* **instagram:** reliably register like animation patch status ([99237dd](https://github.com/somilkhan/piko/commit/99237dda0131f450294bd6f55257199bc49f5211))
+
+## [3.10.1-dev.23](https://github.com/somilkhan/piko/compare/v3.10.1-dev.22...v3.10.1-dev.23) (2026-10-03)
+
+### 🐛 Bug Fixes
+
+* **ci:** correct prerelease version preparation ([7132fa4](https://github.com/somilkhan/piko/commit/7132fa486c95a5b17411571930599a72c3a9bed2))
+* **ci:** make semantic-release own prerelease versioning ([324f964](https://github.com/somilkhan/piko/commit/324f9646e5b08473a8072a9a2792e1d0bcc6aa96))
+* **instagram:** make like animation status authoritative ([8d91d74](https://github.com/somilkhan/piko/commit/8d91d749d281a78c468ef3713e00a076e500b5d2))
+* **instagram:** register like animation status from patch init hook ([797878d](https://github.com/somilkhan/piko/commit/797878d2bd0070f8bc07540425707a6c0e22657c))
+* **instagram:** reliably register like animation patch status ([99237dd](https://github.com/somilkhan/piko/commit/99237dda0131f450294bd6f55257199bc49f5211))
+
+## [3.10.1-dev.23](https://github.com/somilkhan/piko/compare/v3.10.1-dev.22...v3.10.1-dev.23) (2026-10-03)
+
+### 🐛 Bug Fixes
+
+* **instagram:** make like animation status authoritative ([8d91d74](https://github.com/somilkhan/piko/commit/8d91d749d281a78c468ef3713e00a076e500b5d2))
+* **instagram:** register like animation status from patch init hook ([797878d](https://github.com/somilkhan/piko/commit/797878d2bd0070f8bc07540425707a6c0e22657c))
+* **instagram:** reliably register like animation patch status ([99237dd](https://github.com/somilkhan/piko/commit/99237dda0131f450294bd6f55257199bc49f5211))
+
+## [3.10.1-dev.23](https://github.com/somilkhan/piko/compare/v3.10.1-dev.22...v3.10.1-dev.23) (2026-10-03)
+
+### 🐛 Bug Fixes
+
+* **instagram:** make like animation status authoritative ([8d91d74](https://github.com/somilkhan/piko/commit/8d91d749d281a78c468ef3713e00a076e500b5d2))
+* **instagram:** register like animation status from patch init hook ([797878d](https://github.com/somilkhan/piko/commit/797878d2bd0070f8bc07540425707a6c0e22657c))
+* **instagram:** reliably register like animation patch status ([99237dd](https://github.com/somilkhan/piko/commit/99237dda0131f450294bd6f55257199bc49f5211))
+
+## [3.10.1-dev.23](https://github.com/somilkhan/piko/compare/v3.10.1-dev.22...v3.10.1-dev.23) (2026-10-03)
+
+### 🐛 Bug Fixes
+
+* **instagram:** make like animation status authoritative ([8d91d74](https://github.com/somilkhan/piko/commit/8d91d749d281a78c468ef3713e00a076e500b5d2))
+* **instagram:** register like animation status from patch init hook ([797878d](https://github.com/somilkhan/piko/commit/797878d2bd0070f8bc07540425707a6c0e22657c))
+
+## [3.10.1-dev.23](https://github.com/somilkhan/piko/compare/v3.10.1-dev.22...v3.10.1-dev.23) (2026-10-03)
+
+### 🐛 Bug Fixes
+
+* **instagram:** register like animation status from patch init hook ([797878d](https://github.com/somilkhan/piko/commit/797878d2bd0070f8bc07540425707a6c0e22657c))
+
+## [3.10.1-dev.22](https://github.com/somilkhan/piko/compare/v3.10.1-dev.21...v3.10.1-dev.22) (2026-10-03)
+
+### 🐛 Bug Fixes
+
+* **instagram:** make like animation patch status and hook deterministic ([16c9377](https://github.com/somilkhan/piko/commit/16c93777ec5ea07231b2e5dcd77a68529747f835))
+
+## [3.10.1-dev.21](https://github.com/somilkhan/piko/compare/v3.10.1-dev.20...v3.10.1-dev.21) (2026-10-03)
+
+### 🐛 Bug Fixes
+
+* **ci:** allow dev prerelease publishing without GPG ([9b0dd74](https://github.com/somilkhan/piko/commit/9b0dd7470d4a42c02facc4fad56fe2ab128628e1))
+* **ci:** clear stale dev prerelease tag before release ([78f70e2](https://github.com/somilkhan/piko/commit/78f70e2a11df50f63054ac71cc3718ddb7297b65))
+* **ci:** clear stale dev.2 tag collision ([c18cd81](https://github.com/somilkhan/piko/commit/c18cd813b81ffa20a2a2ca04898b752dc43c9732))
+* **ci:** commit generated prerelease metadata ([975afba](https://github.com/somilkhan/piko/commit/975afba06c7f3c3a1a0897ce67394381a265d95d))
+* **ci:** correct semantic release configuration ([b3ff181](https://github.com/somilkhan/piko/commit/b3ff1812dd6dc8285765d6bc7c0a3dc1bec82d03))
+* **ci:** fetch full git history for dev prereleases ([8a19977](https://github.com/somilkhan/piko/commit/8a1997728de8c65d7fc48e5ce6e0f80764dd63e3))
+* **ci:** grant release workflow tag push permission ([8a9cd96](https://github.com/somilkhan/piko/commit/8a9cd965ad814fbcd66b3513dee26fa10242a9ba))
+* **ci:** publish dev MPP pre-releases ([812a3dd](https://github.com/somilkhan/piko/commit/812a3dd57e069fbaeb9ef1163ba67d56c936a4db))
+* **ci:** publish releases without git push plugin ([169cd57](https://github.com/somilkhan/piko/commit/169cd57101297d4ffa07e65858d1832f9189f1aa))
+* **ci:** release current dev prerelease ([f25419a](https://github.com/somilkhan/piko/commit/f25419a5cbfb5d8d5d7934263b729dcaf57c63cb))
+* **ci:** remove stale dev.3 tag before prerelease ([4e4ce60](https://github.com/somilkhan/piko/commit/4e4ce606ce0489ad0d92b3d4cbfeab0a843485b5))
+* **ci:** repair prerelease release configuration ([78db7e3](https://github.com/somilkhan/piko/commit/78db7e3c5953f005c0f8176ed5de892d54cfb899))
+* **ci:** restore discoverable dev prereleases ([85323ec](https://github.com/somilkhan/piko/commit/85323ece98a22613e98185fc5db5234c26710f8c))
+* **ci:** restore GitHub MPP release publishing ([1d3d648](https://github.com/somilkhan/piko/commit/1d3d648641667289e9c1ae7e1df84ce906a33333))
+* **ci:** restore valid release workflow permissions ([264d38a](https://github.com/somilkhan/piko/commit/264d38ac000d875dd9f64ecac6713ee0714d6304))
+* **ci:** stop deleting active prerelease tags ([7455fc4](https://github.com/somilkhan/piko/commit/7455fc463239e6174181e1dcb1a562847bd6e1fb))
+* **ci:** sync dev before prerelease publishing ([3da5bda](https://github.com/somilkhan/piko/commit/3da5bda6747155111cdd5a34ca495b7f15ba1f0e))
+* **instagram:** use LikeActionView as custom animation target ([f7e7e3d](https://github.com/somilkhan/piko/commit/f7e7e3d4529deb9d1df055f434e0e99b43016096))
+
+## [3.10.0-dev.3](https://github.com/somilkhan/piko/compare/v3.10.0-dev.2...v3.10.0-dev.3) (2026-10-03)
+
+### 🐛 Bug Fixes
+
+* **ci:** commit generated prerelease metadata ([975afba](https://github.com/somilkhan/piko/commit/975afba06c7f3c3a1a0897ce67394381a265d95d))
+* **ci:** remove stale dev.3 tag before prerelease ([4e4ce60](https://github.com/somilkhan/piko/commit/4e4ce606ce0489ad0d92b3d4cbfeab0a843485b5))
+* **ci:** repair prerelease release configuration ([78db7e3](https://github.com/somilkhan/piko/commit/78db7e3c5953f005c0f8176ed5de892d54cfb899))
+* **ci:** sync dev before prerelease publishing ([3da5bda](https://github.com/somilkhan/piko/commit/3da5bda6747155111cdd5a34ca495b7f15ba1f0e))
+
+## [3.10.0-dev.3](https://github.com/somilkhan/piko/compare/v3.10.0-dev.2...v3.10.0-dev.3) (2026-10-03)
+
+### 🐛 Bug Fixes
+
+* **ci:** commit generated prerelease metadata ([975afba](https://github.com/somilkhan/piko/commit/975afba06c7f3c3a1a0897ce67394381a265d95d))
+* **ci:** remove stale dev.3 tag before prerelease ([4e4ce60](https://github.com/somilkhan/piko/commit/4e4ce606ce0489ad0d92b3d4cbfeab0a843485b5))
+* **ci:** repair prerelease release configuration ([78db7e3](https://github.com/somilkhan/piko/commit/78db7e3c5953f005c0f8176ed5de892d54cfb899))
+
+## [3.10.0-dev.3](https://github.com/somilkhan/piko/compare/v3.10.0-dev.2...v3.10.0-dev.3) (2026-10-03)
+
+### 🐛 Bug Fixes
+
+* **ci:** commit generated prerelease metadata ([975afba](https://github.com/somilkhan/piko/commit/975afba06c7f3c3a1a0897ce67394381a265d95d))
+* **ci:** repair prerelease release configuration ([78db7e3](https://github.com/somilkhan/piko/commit/78db7e3c5953f005c0f8176ed5de892d54cfb899))
+
+## [3.10.0-dev.3](https://github.com/somilkhan/piko/compare/v3.10.0-dev.2...v3.10.0-dev.3) (2026-10-03)
+
+### 🐛 Bug Fixes
+
+* **ci:** commit generated prerelease metadata ([975afba](https://github.com/somilkhan/piko/commit/975afba06c7f3c3a1a0897ce67394381a265d95d))
+* **ci:** repair prerelease release configuration ([78db7e3](https://github.com/somilkhan/piko/commit/78db7e3c5953f005c0f8176ed5de892d54cfb899))
+
+## [3.10.0-dev.1](https://github.com/somilkhan/piko/compare/v3.9.0...v3.10.0-dev.1) (2026-10-02)
+
+### 🐛 Bug Fixes
+
+* **ci:** allow dev prerelease publishing without GPG ([9b0dd74](https://github.com/somilkhan/piko/commit/9b0dd7470d4a42c02facc4fad56fe2ab128628e1))
+* **ci:** clear stale dev prerelease tag before release ([78f70e2](https://github.com/somilkhan/piko/commit/78f70e2a11df50f63054ac71cc3718ddb7297b65))
+* **ci:** fetch full git history for dev prereleases ([8a19977](https://github.com/somilkhan/piko/commit/8a1997728de8c65d7fc48e5ce6e0f80764dd63e3))
 * **ci:** Import Crowdin translations onto the latest dev ([#1890](https://github.com/somilkhan/piko/issues/1890)) ([385a8d1](https://github.com/somilkhan/piko/commit/385a8d1852434f0529d4a017f723ccc5cae4e0b8))
+* **ci:** publish dev MPP pre-releases ([812a3dd](https://github.com/somilkhan/piko/commit/812a3dd57e069fbaeb9ef1163ba67d56c936a4db))
 * **github:** use existing enhancement label and add missing twitter label ([6337845](https://github.com/somilkhan/piko/commit/63378453c020ce89f490e802356418816be6820a))
 * **Instagram:** Add missing entity dependencies ([#1833](https://github.com/somilkhan/piko/issues/1833)) ([a19b255](https://github.com/somilkhan/piko/commit/a19b255eccd3b2fed5474bc481ab7f3ae6640be9))
 * **Instagram:** Keep settings switch animations consistent after shortcut launch ([#1883](https://github.com/somilkhan/piko/issues/1883)) ([6ffb046](https://github.com/somilkhan/piko/commit/6ffb046f68cf0d82c36d9c9837d695d259838331))
@@ -12,9 +167,7 @@
 * **Instagram:** Recover settings after crash ([#1822](https://github.com/somilkhan/piko/issues/1822)) ([8391a5b](https://github.com/somilkhan/piko/commit/8391a5b6817289307eb2fef96837c2055eebea99))
 * **Instagram:** Skip event dispatch when analytics are disabled ([#1877](https://github.com/somilkhan/piko/issues/1877)) ([7a44c6d](https://github.com/somilkhan/piko/commit/7a44c6d8306a1c2ca32502b3497308af8e1677b0))
 * **Instagram:** Sync ghost mode icons when settings change ([#1875](https://github.com/somilkhan/piko/issues/1875)) ([dc12da8](https://github.com/somilkhan/piko/commit/dc12da8f03703fb6fa50ce11d009e32754c0761b))
-* make Morphe source link channel aware ([2303eb9](https://github.com/somilkhan/piko/commit/2303eb9d35edb0936c009a057907eeb100240178))
-* make native switch bridge patch idempotent ([0e3b399](https://github.com/somilkhan/piko/commit/0e3b3991ad250fe5405f18492d9726517dcdb44c))
-* point Morphe source link to fork ([2a5bc19](https://github.com/somilkhan/piko/commit/2a5bc193110aaff32f096ff03e89e25d995c6b64))
+* **instagram:** use LikeActionView as custom animation target ([f7e7e3d](https://github.com/somilkhan/piko/commit/f7e7e3d4529deb9d1df055f434e0e99b43016096))
 * Revert "fix(twitter - `Bring Back Twitter`): support to new versions" ([df9b407](https://github.com/somilkhan/piko/commit/df9b4079d33aea17dcda5e4ebacd7bc4307421b9))
 * **twitter - `Bring Back Twitter`:** support to new versions ([ff97563](https://github.com/somilkhan/piko/commit/ff975634c0e30b87fbb06cdcae556ff00f351a7a))
 * **Twitter - Show changelogs:** Error message is shown with changelog dialog ([e1238c3](https://github.com/somilkhan/piko/commit/e1238c3ffd38b1573a11a411000080f825f79583))
@@ -36,32 +189,14 @@
 * **Instagram:** Update the Direct icon in settings and in the navigation customization window. ([#1888](https://github.com/somilkhan/piko/issues/1888)) ([7e50716](https://github.com/somilkhan/piko/commit/7e507162e87e8ac586216fa7562add6bac355d28))
 * **Twitter:** Add bulk feature flag selection and validation ([#1846](https://github.com/somilkhan/piko/issues/1846)) ([7b92ac8](https://github.com/somilkhan/piko/commit/7b92ac8626b2ff907769503ae85b688fd2471c36))
 
-## [3.10.0-dev.2](https://github.com/somilkhan/piko/compare/v3.10.0-dev.1...v3.10.0-dev.2) (2026-09-30)
+## [3.10.0-dev.1](https://github.com/somilkhan/piko/compare/v3.9.0...v3.10.0-dev.1) (2026-10-02)
 
 ### 🐛 Bug Fixes
 
-* make Morphe source link channel aware ([2303eb9](https://github.com/somilkhan/piko/commit/2303eb9d35edb0936c009a057907eeb100240178))
-* make native switch bridge patch idempotent ([0e3b399](https://github.com/somilkhan/piko/commit/0e3b3991ad250fe5405f18492d9726517dcdb44c))
-* point Morphe source link to fork ([2a5bc19](https://github.com/somilkhan/piko/commit/2a5bc193110aaff32f096ff03e89e25d995c6b64))
-
-## [3.10.0-dev.2](https://github.com/somilkhan/piko/compare/v3.10.0-dev.1...v3.10.0-dev.2) (2026-09-30)
-
-### 🐛 Bug Fixes
-
-* make native switch bridge patch idempotent ([0e3b399](https://github.com/somilkhan/piko/commit/0e3b3991ad250fe5405f18492d9726517dcdb44c))
-* point Morphe source link to fork ([2a5bc19](https://github.com/somilkhan/piko/commit/2a5bc193110aaff32f096ff03e89e25d995c6b64))
-
-## [3.10.0-dev.2](https://github.com/somilkhan/piko/compare/v3.10.0-dev.1...v3.10.0-dev.2) (2026-09-30)
-
-### 🐛 Bug Fixes
-
-* make native switch bridge patch idempotent ([0e3b399](https://github.com/somilkhan/piko/commit/0e3b3991ad250fe5405f18492d9726517dcdb44c))
-
-## [3.10.0-dev.1](https://github.com/somilkhan/piko/compare/v3.9.0...v3.10.0-dev.1) (2026-09-30)
-
-### 🐛 Bug Fixes
-
+* **ci:** allow dev prerelease publishing without GPG ([9b0dd74](https://github.com/somilkhan/piko/commit/9b0dd7470d4a42c02facc4fad56fe2ab128628e1))
+* **ci:** fetch full git history for dev prereleases ([8a19977](https://github.com/somilkhan/piko/commit/8a1997728de8c65d7fc48e5ce6e0f80764dd63e3))
 * **ci:** Import Crowdin translations onto the latest dev ([#1890](https://github.com/somilkhan/piko/issues/1890)) ([385a8d1](https://github.com/somilkhan/piko/commit/385a8d1852434f0529d4a017f723ccc5cae4e0b8))
+* **ci:** publish dev MPP pre-releases ([812a3dd](https://github.com/somilkhan/piko/commit/812a3dd57e069fbaeb9ef1163ba67d56c936a4db))
 * **github:** use existing enhancement label and add missing twitter label ([6337845](https://github.com/somilkhan/piko/commit/63378453c020ce89f490e802356418816be6820a))
 * **Instagram:** Add missing entity dependencies ([#1833](https://github.com/somilkhan/piko/issues/1833)) ([a19b255](https://github.com/somilkhan/piko/commit/a19b255eccd3b2fed5474bc481ab7f3ae6640be9))
 * **Instagram:** Keep settings switch animations consistent after shortcut launch ([#1883](https://github.com/somilkhan/piko/issues/1883)) ([6ffb046](https://github.com/somilkhan/piko/commit/6ffb046f68cf0d82c36d9c9837d695d259838331))
@@ -71,6 +206,7 @@
 * **Instagram:** Recover settings after crash ([#1822](https://github.com/somilkhan/piko/issues/1822)) ([8391a5b](https://github.com/somilkhan/piko/commit/8391a5b6817289307eb2fef96837c2055eebea99))
 * **Instagram:** Skip event dispatch when analytics are disabled ([#1877](https://github.com/somilkhan/piko/issues/1877)) ([7a44c6d](https://github.com/somilkhan/piko/commit/7a44c6d8306a1c2ca32502b3497308af8e1677b0))
 * **Instagram:** Sync ghost mode icons when settings change ([#1875](https://github.com/somilkhan/piko/issues/1875)) ([dc12da8](https://github.com/somilkhan/piko/commit/dc12da8f03703fb6fa50ce11d009e32754c0761b))
+* **instagram:** use LikeActionView as custom animation target ([f7e7e3d](https://github.com/somilkhan/piko/commit/f7e7e3d4529deb9d1df055f434e0e99b43016096))
 * Revert "fix(twitter - `Bring Back Twitter`): support to new versions" ([df9b407](https://github.com/somilkhan/piko/commit/df9b4079d33aea17dcda5e4ebacd7bc4307421b9))
 * **twitter - `Bring Back Twitter`:** support to new versions ([ff97563](https://github.com/somilkhan/piko/commit/ff975634c0e30b87fbb06cdcae556ff00f351a7a))
 * **Twitter - Show changelogs:** Error message is shown with changelog dialog ([e1238c3](https://github.com/somilkhan/piko/commit/e1238c3ffd38b1573a11a411000080f825f79583))
@@ -92,11 +228,13 @@
 * **Instagram:** Update the Direct icon in settings and in the navigation customization window. ([#1888](https://github.com/somilkhan/piko/issues/1888)) ([7e50716](https://github.com/somilkhan/piko/commit/7e507162e87e8ac586216fa7562add6bac355d28))
 * **Twitter:** Add bulk feature flag selection and validation ([#1846](https://github.com/somilkhan/piko/issues/1846)) ([7b92ac8](https://github.com/somilkhan/piko/commit/7b92ac8626b2ff907769503ae85b688fd2471c36))
 
-## [3.10.0-dev.1](https://github.com/somilkhan/piko/compare/v3.9.0...v3.10.0-dev.1) (2026-09-30)
+## [3.10.0-dev.1](https://github.com/somilkhan/piko/compare/v3.9.0...v3.10.0-dev.1) (2026-10-02)
 
 ### 🐛 Bug Fixes
 
+* **ci:** allow dev prerelease publishing without GPG ([9b0dd74](https://github.com/somilkhan/piko/commit/9b0dd7470d4a42c02facc4fad56fe2ab128628e1))
 * **ci:** Import Crowdin translations onto the latest dev ([#1890](https://github.com/somilkhan/piko/issues/1890)) ([385a8d1](https://github.com/somilkhan/piko/commit/385a8d1852434f0529d4a017f723ccc5cae4e0b8))
+* **ci:** publish dev MPP pre-releases ([812a3dd](https://github.com/somilkhan/piko/commit/812a3dd57e069fbaeb9ef1163ba67d56c936a4db))
 * **github:** use existing enhancement label and add missing twitter label ([6337845](https://github.com/somilkhan/piko/commit/63378453c020ce89f490e802356418816be6820a))
 * **Instagram:** Add missing entity dependencies ([#1833](https://github.com/somilkhan/piko/issues/1833)) ([a19b255](https://github.com/somilkhan/piko/commit/a19b255eccd3b2fed5474bc481ab7f3ae6640be9))
 * **Instagram:** Keep settings switch animations consistent after shortcut launch ([#1883](https://github.com/somilkhan/piko/issues/1883)) ([6ffb046](https://github.com/somilkhan/piko/commit/6ffb046f68cf0d82c36d9c9837d695d259838331))
@@ -106,41 +244,7 @@
 * **Instagram:** Recover settings after crash ([#1822](https://github.com/somilkhan/piko/issues/1822)) ([8391a5b](https://github.com/somilkhan/piko/commit/8391a5b6817289307eb2fef96837c2055eebea99))
 * **Instagram:** Skip event dispatch when analytics are disabled ([#1877](https://github.com/somilkhan/piko/issues/1877)) ([7a44c6d](https://github.com/somilkhan/piko/commit/7a44c6d8306a1c2ca32502b3497308af8e1677b0))
 * **Instagram:** Sync ghost mode icons when settings change ([#1875](https://github.com/somilkhan/piko/issues/1875)) ([dc12da8](https://github.com/somilkhan/piko/commit/dc12da8f03703fb6fa50ce11d009e32754c0761b))
-* Revert "fix(twitter - `Bring Back Twitter`): support to new versions" ([df9b407](https://github.com/somilkhan/piko/commit/df9b4079d33aea17dcda5e4ebacd7bc4307421b9))
-* **twitter - `Bring Back Twitter`:** support to new versions ([ff97563](https://github.com/somilkhan/piko/commit/ff975634c0e30b87fbb06cdcae556ff00f351a7a))
-* **Twitter - Show changelogs:** Error message is shown with changelog dialog ([e1238c3](https://github.com/somilkhan/piko/commit/e1238c3ffd38b1573a11a411000080f825f79583))
-* **Twitter:** avoid copying editor spans in custom font hook ([c6deb8d](https://github.com/somilkhan/piko/commit/c6deb8daa5cd1f41a3a368802cf87c6f5dbf2749))
-* **Twitter:** guard null ShareTarget in modern share sheet link hook ([5066035](https://github.com/somilkhan/piko/commit/5066035bc43b7c27f7e13248f0edec5afa7be85a))
-* **Twitter:** Preserve links when applying custom fonts ([#1889](https://github.com/somilkhan/piko/issues/1889)) ([f5d1db8](https://github.com/somilkhan/piko/commit/f5d1db88cb2e1782436604168903347b43d3743c))
-* **Twitter:** restore relationship actions in user lists ([854f5e2](https://github.com/somilkhan/piko/commit/854f5e26831c997e376a7b68094a7fbde89fc790))
-* **Twitter:** Restore timeline position on startup ([ae231c5](https://github.com/somilkhan/piko/commit/ae231c596bf9b7d3b1f2a1cff9ef5e74151cd6b9))
-
-### ✨ New Features
-
-* **Instagram:** Add startup tab selection ([#1869](https://github.com/somilkhan/piko/issues/1869)) ([d284f62](https://github.com/somilkhan/piko/commit/d284f629056344bec9351fe86afd73f07ef25818))
-* **Instagram:** Add story seen button ([#1884](https://github.com/somilkhan/piko/issues/1884)) ([c39e122](https://github.com/somilkhan/piko/commit/c39e122dbce23d9d603bc73010e0aeaccdfe88bd))
-* **Instagram:** Add visibility controls for create and notification buttons ([#1870](https://github.com/somilkhan/piko/issues/1870)) ([a1c0866](https://github.com/somilkhan/piko/commit/a1c0866824ef72cd40b5d03d3ec2a46bf5f8cdaf))
-* **Instagram:** Customize navigation bar ([#1867](https://github.com/somilkhan/piko/issues/1867)) ([bbd335c](https://github.com/somilkhan/piko/commit/bbd335ca7764ec99c3c9936e0ffd71723699e627))
-* **Instagram:** Embed metadata in downloaded videos ([#1828](https://github.com/somilkhan/piko/issues/1828)) ([9493252](https://github.com/somilkhan/piko/commit/949325266af15c51477101be81ad8692bb439557))
-* **Instagram:** Integrate `Disable onboarding permission prompts` patch into `Disable analytics` ([#1771](https://github.com/somilkhan/piko/issues/1771)) ([a7974cd](https://github.com/somilkhan/piko/commit/a7974cd4c66dff557c2905ea92ad73741b46fa44))
-* **Instagram:** Restore classic search recents (up to 25) ([#1741](https://github.com/somilkhan/piko/issues/1741)) ([bb98bcb](https://github.com/somilkhan/piko/commit/bb98bcb219ca0a30ee672db4361dc70abbfe06df))
-* **Instagram:** Update the Direct icon in settings and in the navigation customization window. ([#1888](https://github.com/somilkhan/piko/issues/1888)) ([7e50716](https://github.com/somilkhan/piko/commit/7e507162e87e8ac586216fa7562add6bac355d28))
-* **Twitter:** Add bulk feature flag selection and validation ([#1846](https://github.com/somilkhan/piko/issues/1846)) ([7b92ac8](https://github.com/somilkhan/piko/commit/7b92ac8626b2ff907769503ae85b688fd2471c36))
-
-## [3.10.0-dev.1](https://github.com/somilkhan/piko/compare/v3.9.0...v3.10.0-dev.1) (2026-09-30)
-
-### 🐛 Bug Fixes
-
-* **ci:** Import Crowdin translations onto the latest dev ([#1890](https://github.com/somilkhan/piko/issues/1890)) ([385a8d1](https://github.com/somilkhan/piko/commit/385a8d1852434f0529d4a017f723ccc5cae4e0b8))
-* **github:** use existing enhancement label and add missing twitter label ([6337845](https://github.com/somilkhan/piko/commit/63378453c020ce89f490e802356418816be6820a))
-* **Instagram:** Add missing entity dependencies ([#1833](https://github.com/somilkhan/piko/issues/1833)) ([a19b255](https://github.com/somilkhan/piko/commit/a19b255eccd3b2fed5474bc481ab7f3ae6640be9))
-* **Instagram:** Keep settings switch animations consistent after shortcut launch ([#1883](https://github.com/somilkhan/piko/issues/1883)) ([6ffb046](https://github.com/somilkhan/piko/commit/6ffb046f68cf0d82c36d9c9837d695d259838331))
-* **Instagram:** Preserve the startup tab while editing navigation ([#1880](https://github.com/somilkhan/piko/issues/1880)) ([cb1241f](https://github.com/somilkhan/piko/commit/cb1241f236801e8b5d58722e7db0b6d12680d08d))
-* **Instagram:** Preserve unobserved theme state ([#1872](https://github.com/somilkhan/piko/issues/1872)) ([cf7cd66](https://github.com/somilkhan/piko/commit/cf7cd668dfe554a3a2de016524c88f92e7fb6303))
-* **Instagram:** Prevent newlines in text preferences ([#1811](https://github.com/somilkhan/piko/issues/1811)) ([2cb1faa](https://github.com/somilkhan/piko/commit/2cb1faa3e18a7e99a5271957803cc5e6c278692e))
-* **Instagram:** Recover settings after crash ([#1822](https://github.com/somilkhan/piko/issues/1822)) ([8391a5b](https://github.com/somilkhan/piko/commit/8391a5b6817289307eb2fef96837c2055eebea99))
-* **Instagram:** Skip event dispatch when analytics are disabled ([#1877](https://github.com/somilkhan/piko/issues/1877)) ([7a44c6d](https://github.com/somilkhan/piko/commit/7a44c6d8306a1c2ca32502b3497308af8e1677b0))
-* **Instagram:** Sync ghost mode icons when settings change ([#1875](https://github.com/somilkhan/piko/issues/1875)) ([dc12da8](https://github.com/somilkhan/piko/commit/dc12da8f03703fb6fa50ce11d009e32754c0761b))
+* **instagram:** use LikeActionView as custom animation target ([f7e7e3d](https://github.com/somilkhan/piko/commit/f7e7e3d4529deb9d1df055f434e0e99b43016096))
 * Revert "fix(twitter - `Bring Back Twitter`): support to new versions" ([df9b407](https://github.com/somilkhan/piko/commit/df9b4079d33aea17dcda5e4ebacd7bc4307421b9))
 * **twitter - `Bring Back Twitter`:** support to new versions ([ff97563](https://github.com/somilkhan/piko/commit/ff975634c0e30b87fbb06cdcae556ff00f351a7a))
 * **Twitter - Show changelogs:** Error message is shown with changelog dialog ([e1238c3](https://github.com/somilkhan/piko/commit/e1238c3ffd38b1573a11a411000080f825f79583))

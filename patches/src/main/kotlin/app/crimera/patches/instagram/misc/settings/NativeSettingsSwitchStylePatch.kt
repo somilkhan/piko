@@ -45,10 +45,8 @@ internal val nativeSettingsSwitchStylePatch = bytecodePatch {
             }
         }.singleOrNull() ?: throw PatchException("Expected one native switch style flag")
         val switchClass = mutableClassDefBy(IGDS_SWITCH)
-        // The patch can be reached more than once through the dependency graph.
-        // Once the bridge has been installed, the second invocation must be a no-op.
         if (switchClass.methods.any { it.name == STYLE_METHOD }) {
-            return@execute
+            throw PatchException("Native switch style bridge already exists")
         }
 
         // A shortcut can load IgdsSwitch before Instagram initializes its style provider.
