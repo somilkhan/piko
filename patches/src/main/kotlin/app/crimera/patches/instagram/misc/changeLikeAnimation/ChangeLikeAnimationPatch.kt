@@ -42,6 +42,13 @@ val changeLikeAnimationPatch =
         compatibleWith(COMPATIBILITY_INSTAGRAM)
         dependsOn(settingsPatch)
 
+        // Register the About -> Patch information flag as its own patch operation.
+        // Keeping this separate from the Instagram target-method rewrite is important:
+        // the target rewrite can succeed while SettingsStatus.load() remains untouched.
+        execute {
+            enableSettings("changeLikeAnimation")
+        }
+
         execute {
             XDTUserActivationMetadataImplInitFingerprint.method.apply {
                 val animationEnumClassType = parameters[0].type
@@ -62,7 +69,6 @@ val changeLikeAnimationPatch =
                     """.trimIndent(),
                     ExternalLabel("piko", getInstruction(0)),
                 )
-                enableSettings("changeLikeAnimation")
             }
         }
 
