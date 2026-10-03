@@ -43,6 +43,17 @@
     ],
     "gradle-semantic-release-plugin",
     [
+      "@semantic-release/git", {
+        "assets": [
+          "CHANGELOG.md",
+          "patches-bundle.json",
+          "patches-list.json",
+          "README.md"
+        ],
+        "message": "chore: Release v\${nextRelease.version} [skip ci]\\n\\n\${nextRelease.notes}"
+      }
+    ],
+    [
       "@semantic-release/github",
       {
         "assets": [
