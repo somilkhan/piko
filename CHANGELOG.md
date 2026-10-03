@@ -1,3 +1,9 @@
+## [3.10.1-dev.22](https://github.com/somilkhan/piko/compare/v3.10.1-dev.21...v3.10.1-dev.22) (2026-10-03)
+
+### 🐛 Bug Fixes
+
+* **instagram:** make like animation patch status and hook deterministic ([16c9377](https://github.com/somilkhan/piko/commit/16c93777ec5ea07231b2e5dcd77a68529747f835))
+
 ## [3.10.1-dev.21](https://github.com/somilkhan/piko/compare/v3.10.1-dev.20...v3.10.1-dev.21) (2026-10-03)
 
 ### 🐛 Bug Fixes
